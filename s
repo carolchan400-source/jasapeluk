@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasa Peluk — Karena Satu Pelukan Bisa Lebih Berarti</title>
+<meta name="description" content="Jasa Peluk adalah konsep kreatif dan personal tentang kehangatan, kepedulian, dan koneksi antar manusia. Sebuah hadiah, bukan layanan komersial.">
+<meta property="og:title" content="Jasa Peluk">
+<meta property="og:description" content="Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jasa Peluk">
+<meta name="twitter:description" content="Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Jasa Peluk",
+  "description": "Sebuah konsep kreatif dan personal tentang kehangatan dan koneksi manusia. Bukan layanan komersial nyata.",
+  "genre": "Fiction"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#FF5C8A;
+    --primary-soft:#FFB3C9;
+    --secondary:#8B5CF6;
+    --accent:#FFD166;
+    --bg:#FFF7FB;
+    --white:#FFFFFF;
+    --ink:#2B1F2E;
+    --ink-soft:#6B5A6B;
+    --line:rgba(139,92,246,0.12);
+    --shadow-soft: 0 20px 60px rgba(139,92,246,0.14);
+    --shadow-glow: 0 0 40px rgba(255,92,138,0.35);
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 14px;
+    --font-display:'Poppins',sans-serif;
+    --font-body:'Plus Jakarta Sans',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--ink);
+    overflow-x:hidden;
+    line-height:1.6;
+  }
+  ::selection{background:var(--primary-soft);}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img,svg{display:block;max-width:100%;}
+  .container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.01em;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--secondary);
+    background:rgba(139,92,246,0.08);
+    padding:8px 16px;
+    border-radius:999px;
+    margin-bottom:20px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--primary);}
+
+  /* ===== Fiction badge ===== */
+  .fiction-note{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
+    background:rgba(43,31,46,0.92);
+    color:#fff;
+    font-size:12.5px;
+    padding:10px 16px;
+    border-radius:999px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    max-width:260px;
+    line-height:1.4;
+    backdrop-filter:blur(6px);
+    opacity:0.92;
+  }
+
+  /* ===== Nav ===== */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    padding:18px 0;
+    transition:all .3s ease;
+  }
+  header.scrolled{
+    background:rgba(255,247,251,0.75);
+    backdrop-filter:blur(16px);
+    box-shadow:0 4px 24px rgba(139,92,246,0.08);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:20px;
+    color:var(--ink);
+  }
+  .logo-mark{
+    width:38px;height:38px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 20px rgba(255,92,138,0.35);
+  }
+  .nav-links{
+    display:flex;
+    gap:36px;
+    font-size:15px;
+    font-weight:500;
+    color:var(--ink-soft);
+  }
+  .nav-links a{ position:relative; transition:color .25s;}
+  .nav-links a:hover{color:var(--primary);}
+  .nav-cta{
+    display:flex;align-items:center;gap:14px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    border:none;
+    transition:transform .25s ease, box-shadow .25s ease;
+    font-family:var(--font-body);
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--primary),#ff8fae);
+    color:#fff;
+    box-shadow:0 12px 30px rgba(255,92,138,0.35);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(255,92,138,0.45);}
+  .btn-ghost{
+    background:rgba(255,255,255,0.6);
+    color:var(--ink);
+    border:1px solid var(--line);
+    backdrop-filter:blur(8px);
+  }
+  .btn-ghost:hover{background:#fff;transform:translateY(-3px);}
+  .btn-sm{padding:10px 20px;font-size:14px;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    padding:170px 0 120px;
+    overflow:hidden;
+  }
+  .hero-blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(60px);
+    opacity:0.55;
+    animation:float 14s ease-in-out infinite;
+    z-index:0;
+  }
+  .blob1{width:420px;height:420px;background:radial-gradient(circle,var(--primary-soft),transparent 70%);top:-120px;right:-100px;}
+  .blob2{width:380px;height:380px;background:radial-gradient(circle,var(--secondary),transparent 70%);opacity:0.25;top:200px;left:-160px;animation-delay:3s;}
+  .blob3{width:300px;height:300px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:0.35;bottom:-100px;right:20%;animation-delay:6s;}
+  @keyframes float{
+    0%,100%{transform:translateY(0) translateX(0) scale(1);}
+    50%{transform:translateY(-30px) translateX(20px) scale(1.05);}
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px,5vw,64px);
+    line-height:1.08;
+    margin-bottom:24px;
+    background:linear-gradient(120deg,var(--ink) 40%, var(--secondary) 70%, var(--primary));
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p.lead{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin-bottom:36px;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+  .hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
+  .hero-stat b{font-family:var(--font-display);font-size:22px;display:block;color:var(--ink);}
+  .hero-stat span{font-size:13px;color:var(--ink-soft);}
+
+  .hero-visual{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .glass-card{
+    background:rgba(255,255,255,0.55);
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:var(--radius-lg);
+    backdrop-filter:blur(18px);
+    box-shadow:var(--shadow-soft);
+    padding:28px;
+  }
+  .hero-main-card{
+    width:100%;
+    max-width:420px;
+    padding:36px;
+    text-align:center;
+    position:relative;
+  }
+  .hero-illustration{
+    width:180px;height:180px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow-glow);
+    animation:pulseGlow 4s ease-in-out infinite;
+  }
+  @keyframes pulseGlow{
+    0%,100%{box-shadow:0 0 30px rgba(255,92,138,0.35);}
+    50%{box-shadow:0 0 55px rgba(255,92,138,0.55);}
+  }
+  .hero-main-card h3{font-size:19px;margin-bottom:8px;}
+  .hero-main-card p{font-size:14px;color:var(--ink-soft);}
+  .floating-chip{
+    position:absolute;
+    padding:12px 18px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:600;
+    display:flex;align-items:center;gap:8px;
+    animation:bob 5s ease-in-out infinite;
+  }
+  .chip1{top:0;left:-30px;background:#fff;box-shadow:var(--shadow-soft);}
+  .chip2{bottom:20px;right:-40px;background:#fff;box-shadow:var(--shadow-soft);animation-delay:1.5s;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+
+  /* ===== Section generic ===== */
+  section{padding:110px 0;position:relative;}
+  .section-head{max-width:720px;margin:0 auto 60px;text-align:center;}
+  .section-head h2{font-size:clamp(30px,4vw,44px);margin-bottom:18px;}
+  .section-head p{font-size:17px;color:var(--ink-soft);}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ===== Home / intro content ===== */
+  .intro{background:linear-gradient(180deg,var(--bg),#fff);}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .intro-text p{color:var(--ink-soft);font-size:16.5px;margin-bottom:18px;}
+  .intro-card-stack{position:relative;height:420px;}
+  .stack-card{
+    position:absolute;
+    width:78%;
+    padding:28px;
+    border-radius:var(--radius-md);
+  }
+  .stack-card.a{background:#fff;box-shadow:var(--shadow-soft);top:0;left:0;transform:rotate(-4deg);}
+  .stack-card.b{background:linear-gradient(135deg,var(--secondary),#a78bfa);color:#fff;top:90px;left:22%;transform:rotate(3deg);box-shadow:0 20px 50px rgba(139,92,246,0.3);}
+  .stack-card.c{background:linear-gradient(135deg,var(--primary),#ff8fae);color:#fff;top:190px;left:6%;transform:rotate(-2deg);box-shadow:0 20px 50px rgba(255,92,138,0.3);}
+  .stack-card h4{font-size:16px;margin-bottom:6px;}
+  .stack-card p{font-size:13.5px;opacity:0.9;}
+
+  /* ===== About ===== */
+  .about{background:#fff;}
+  .about-inner{max-width:760px;margin:0 auto;}
+  .about-inner p{color:var(--ink-soft);font-size:16.5px;margin-bottom:20px;}
+  .about-inner p:first-of-type{
+    font-size:19px;
+    color:var(--ink);
+    font-weight:500;
+  }
+  .pull-quote{
+    font-family:var(--font-display);
+    font-size:22px;
+    color:var(--secondary);
+    border-left:3px solid var(--primary);
+    padding-left:24px;
+    margin:36px 0;
+    line-height:1.5;
+  }
+
+  /* ===== Services ===== */
+  .services{background:linear-gradient(180deg,#fff,var(--bg));}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+  }
+  .service-card{
+    background:#fff;
+    border-radius:var(--radius-md);
+    padding:32px;
+    border:1px solid var(--line);
+    transition:transform .3s ease, box-shadow .3s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .service-card::before{
+    content:'';
+    position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+  .service-card:hover::before{opacity:1;}
+  .service-icon{
+    width:52px;height:52px;
+    border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,92,138,0.1);
+    margin-bottom:18px;
+    font-size:22px;
+  }
+  .service-card h3{font-size:19px;margin-bottom:10px;}
+  .service-card p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* ===== Why choose ===== */
+  .why{background:#fff;}
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .why-card{
+    text-align:center;
+    padding:32px 20px;
+    border-radius:var(--radius-md);
+    background:var(--bg);
+    transition:transform .3s ease;
+  }
+  .why-card:hover{transform:translateY(-6px);}
+  .why-icon{
+    width:56px;height:56px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:22px;
+    box-shadow:0 10px 24px rgba(255,92,138,0.3);
+  }
+  .why-card h4{font-size:16px;margin-bottom:8px;}
+  .why-card p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* ===== Testimonials ===== */
+  .testi{background:linear-gradient(180deg,var(--bg),#fff);}
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+  }
+  .testi-card{
+    background:#fff;
+    border-radius:var(--radius-md);
+    padding:30px;
+    box-shadow:0 10px 30px rgba(139,92,246,0.08);
+  }
+  .testi-stars{color:var(--accent);font-size:15px;margin-bottom:14px;letter-spacing:2px;}
+  .testi-card p.quote{font-size:15px;color:var(--ink);margin-bottom:20px;font-style:italic;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:700;font-size:15px;
+  }
+  .testi-person b{font-size:14px;display:block;}
+  .testi-person span{font-size:12px;color:var(--ink-soft);}
+
+  /* ===== FAQ ===== */
+  .faq{background:#fff;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+    cursor:pointer;
+  }
+  .faq-q{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:16px;
+  }
+  .faq-q .icon{
+    width:28px;height:28px;
+    border-radius:50%;
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    transition:transform .3s ease;
+    font-size:16px;
+    color:var(--primary);
+  }
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .faq-a-inner{padding-top:14px;}
+  .faq-item.open .faq-a{max-height:400px;}
+
+  /* ===== CTA banner ===== */
+  .cta-banner{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    border-radius:var(--radius-lg);
+    padding:70px 50px;
+    text-align:center;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    margin:0 24px;
+  }
+  .cta-banner h2{font-size:clamp(26px,4vw,38px);margin-bottom:16px;color:#fff;}
+  .cta-banner p{color:rgba(255,255,255,0.9);max-width:560px;margin:0 auto 30px;}
+  .cta-banner .btn-ghost{background:#fff;color:var(--primary);border:none;}
+
+  /* ===== Footer ===== */
+  footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:70px 0 30px;}
+  .footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:50px;
+  }
+  .footer-logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-display);font-weight:700;font-size:19px;margin-bottom:16px;}
+  footer h5{color:#fff;font-size:14px;margin-bottom:18px;letter-spacing:0.04em;text-transform:uppercase;}
+  footer ul li{margin-bottom:10px;font-size:14px;}
+  footer ul li a:hover{color:var(--primary-soft);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:12.5px;
+    color:rgba(255,255,255,0.5);
+  }
+  .footer-disclaimer{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px;
+    padding:20px 24px;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:40px;
+    color:rgba(255,255,255,0.6);
+  }
+
+  @media (max-width:960px){
+    .nav-links{display:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .intro-grid{grid-template-columns:1fr;}
+    .intro-card-stack{height:320px;margin-top:40px;}
+    .service-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .cta-banner{margin:0 12px;padding:50px 24px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="fiction-note">✦ Konsep kreatif &amp; personal — bukan layanan komersial nyata.</div>
+
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <a href="#top" class="logo">
+        <span class="logo-mark">🤍</span>
+        Jasa Peluk
+      </a>
+      <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#layanan" class="btn btn-primary btn-sm">Jelajahi Layanan</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <div class="hero-blob blob1"></div>
+    <div class="hero-blob blob2"></div>
+    <div class="hero-blob blob3"></div>
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Sebuah Konsep, Bukan Layanan Nyata</span>
+        <h1>Terkadang, Dunia<br>Hanya Butuh<br>Satu Pelukan.</h1>
+        <p class="lead">Jasa Peluk adalah ruang imajinasi tentang kehangatan — sebuah cara untuk mengatakan "aku di sini untukmu" tanpa perlu seribu kata. Dibuat dengan hati, untuk satu orang yang berarti.</p>
+        <div class="hero-cta">
+          <a href="#layanan" class="btn btn-primary">Jelajahi Layanan Peluk</a>
+          <a href="#tentang" class="btn btn-ghost">Baca Cerita Kami</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>8</b><span>Jenis Kehangatan</span></div>
+          <div class="hero-stat"><b>∞</b><span>Ketulusan</span></div>
+          <div class="hero-stat"><b>1</b><span>Alasan: Kamu</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glass-card hero-main-card">
+          <div class="hero-illustration">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6">
+              <path d="M12 21s-7.5-4.35-9.5-9.28C1.2 8.6 3 5.5 6.2 5.1c1.8-.22 3.4.62 4.3 2 .3.46.9.46 1.2 0 .9-1.38 2.5-2.22 4.3-2 3.2.4 5 3.5 3.7 6.62C19.5 16.65 12 21 12 21z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Ruang Tenang untukmu</h3>
+          <p>Berhenti sejenak. Bernapas. Kamu tidak perlu kuat sepanjang waktu.</p>
+        </div>
+        <div class="floating-chip chip1">🌸 &nbsp;Dibuat dengan tulus</div>
+        <div class="floating-chip chip2">💜 &nbsp;Untuk seseorang yang istimewa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME CONTENT -->
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text reveal">
+          <span class="eyebrow"><span class="dot"></span> Mengapa Ini Ada</span>
+          <h2 style="font-size:32px;margin-bottom:20px;">Kadang, yang Kita Cari Bukan Solusi. Hanya Kehangatan.</h2>
+          <p>Ada hari-hari ketika kata-kata terasa terlalu berat untuk diucapkan, dan nasihat terasa terlalu jauh untuk didengar. Pada hari-hari itu, yang sering kita butuhkan sebenarnya sederhana: seseorang yang mau duduk di sisi kita, tanpa menghakimi, tanpa terburu-buru pergi.</p>
+          <p>Jasa Peluk lahir dari gagasan itu. Bukan sebagai bisnis, bukan sebagai transaksi — melainkan sebagai simbol. Simbol bahwa ada orang yang memikirkanmu cukup dalam untuk membangun sebuah "ruang" khusus, hanya agar kamu tahu: kamu tidak sendirian, dan kamu boleh merasa lelah sesekali.</p>
+          <p>Setiap bagian dari halaman ini — setiap warna, setiap kalimat — dirancang untuk satu tujuan kecil namun penting: mengingatkanmu bahwa kehangatan itu nyata, meskipun datang dalam bentuk yang tidak biasa.</p>
+        </div>
+        <div class="intro-card-stack reveal">
+          <div class="glass-card stack-card a">
+            <h4 style="color:var(--ink)">🌤️ Untuk Hari yang Berat</h4>
+            <p style="color:var(--ink-soft)">Tidak semua hari harus dihadapi sendirian.</p>
+          </div>
+          <div class="glass-card stack-card b">
+            <h4>🎉 Untuk Momen Bahagia</h4>
+            <p>Kebahagiaan terasa lebih utuh saat dibagikan.</p>
+          </div>
+          <div class="glass-card stack-card c">
+            <h4>🤍 Untuk Sekadar Hadir</h4>
+            <p>Kadang, kehadiran saja sudah cukup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="tentang">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Tentang Kami</span>
+        <h2>Cerita di Balik Jasa Peluk</h2>
+      </div>
+      <div class="about-inner reveal">
+        <p>Semua ide besar biasanya dimulai dari hal kecil — sebuah percakapan larut malam, sebuah momen ketika seseorang terlihat kelelahan namun tetap berusaha tersenyum. Jasa Peluk pun dimulai dari momen sesederhana itu: dari kesadaran bahwa dukungan tidak selalu harus rumit untuk terasa bermakna.</p>
+        <p>Kami percaya bahwa di tengah dunia yang serba cepat, di mana setiap orang dituntut untuk terlihat kuat, tenang, dan selalu memiliki jawaban, ada satu kebutuhan yang sering terlupakan: kebutuhan untuk sekadar dipeluk, didengarkan, dan diterima apa adanya — tanpa embel-embel, tanpa penilaian, tanpa harus menjelaskan apa pun.</p>
+        <p class="pull-quote">"Tidak semua luka butuh solusi. Kadang, ia hanya butuh ditemani."</p>
+        <p>Dari pemikiran itu, lahirlah gagasan tentang sebuah "ruang" — bukan ruang fisik, melainkan ruang perasaan. Sebuah tempat di mana kehangatan dikemas menjadi bahasa yang mudah dipahami: pelukan. Bukan karena pelukan adalah jawaban dari segala masalah, tetapi karena pelukan adalah salah satu bentuk komunikasi paling jujur yang manusia miliki — bahasa yang tidak memerlukan kata-kata untuk mengatakan "aku peduli padamu."</p>
+        <p>Jasa Peluk dibangun bukan sebagai sebuah usaha, melainkan sebagai persembahan pribadi. Setiap kalimat di halaman ini ditulis dengan kesadaran penuh bahwa kehangatan sejati tidak bisa dibeli — ia hanya bisa diberikan, dengan tulus, oleh seseorang yang benar-benar peduli. Maka, biarlah situs ini menjadi representasi dari kepedulian itu: sebuah cara kreatif untuk mengatakan "aku memikirkanmu," dikemas dalam bentuk yang indah dan penuh perhatian.</p>
+        <p>Filosofi kami sederhana. Pertama, empati harus selalu mendahului solusi — sebelum mencoba memperbaiki sesuatu, seseorang perlu merasa dipahami. Kedua, kebaikan tidak memerlukan alasan besar; kebaikan kecil yang konsisten sering kali lebih berarti daripada gestur besar yang jarang dilakukan. Ketiga, koneksi antar manusia adalah kebutuhan dasar, bukan kemewahan — setiap orang, tidak peduli seberapa kuat ia terlihat dari luar, tetap membutuhkan ruang untuk menjadi rentan.</p>
+        <p>Kami juga percaya bahwa kehangatan memiliki banyak bentuk. Ia bisa berupa pelukan yang sesungguhnya, tetapi ia juga bisa berupa perhatian, waktu yang diluangkan, atau sekadar kesediaan untuk hadir di saat yang tepat. Jasa Peluk mencoba merayakan semua bentuk kehangatan itu — merangkumnya ke dalam delapan jenis "pelukan" simbolis yang masing-masing mewakili momen berbeda dalam hidup: semangat yang goyah, hari yang berat, awal yang baru, perpisahan yang menyakitkan, kebahagiaan yang ingin dibagi, keheningan yang butuh ditemani, persahabatan yang menguatkan, dan keluarga yang selalu menjadi rumah.</p>
+        <p>Pada akhirnya, Jasa Peluk bukan tentang transaksi. Ia tentang niat baik yang dikemas menjadi sesuatu yang bisa dilihat, dibaca, dan dirasakan. Ia adalah pengingat kecil — namun tulus — bahwa di dunia yang kadang terasa dingin, selalu ada seseorang yang bersedia memberikan kehangatan, tanpa syarat, tanpa harga, hanya karena kamu pantas mendapatkannya.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Jenis Kehangatan</span>
+        <h2>Delapan Makna di Balik Setiap Pelukan</h2>
+        <p>Setiap "layanan" di sini adalah konsep simbolis — representasi dari jenis dukungan emosional yang berbeda, bukan kontak fisik komersial.</p>
+      </div>
+      <div class="service-grid reveal">
+
+        <div class="service-card">
+          <div class="service-icon">💪</div>
+          <h3>Peluk Semangat</h3>
+          <p>Untuk hari-hari ketika langkahmu terasa berat dan keyakinanmu mulai goyah. Peluk Semangat adalah simbol dorongan lembut yang mengatakan, "kamu lebih kuat dari yang kamu kira." Ia hadir bukan untuk menghapus rasa ragu, tetapi untuk menemani prosesnya — mengingatkanmu bahwa setiap usaha kecil yang kamu lakukan hari ini tetap berarti, meskipun hasilnya belum terlihat. Ini adalah pelukan yang berbicara tanpa suara, mengatakan bahwa seseorang mempercayaimu bahkan di saat kamu sendiri belum sepenuhnya percaya. Sebuah pengingat bahwa semangat tidak harus selalu menyala besar — kadang, ia hanya perlu dijaga agar tidak padam, sedikit demi sedikit, sampai kamu siap menyalakannya sendiri lagi. Peluk Semangat hadir untuk versi dirimu yang sedang berjuang diam-diam, yang terus mencoba meski lelah, dan yang layak diberi tahu bahwa usahanya terlihat dan dihargai.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌧️</div>
+          <h3>Peluk Hari Berat</h3>
+          <p>Tidak semua hari bisa dijalani dengan mudah. Ada hari-hari ketika semuanya terasa terlalu banyak — pikiran yang penuh, hati yang lelah, dan energi yang seakan habis sebelum hari berakhir. Peluk Hari Berat adalah bentuk kehadiran tanpa tuntutan: tidak meminta penjelasan, tidak menuntut kekuatan, hanya menawarkan ruang untuk sejenak berhenti. Ia adalah pengingat bahwa boleh saja merasa tidak baik-baik saja, dan bahwa perasaan itu tidak perlu disembunyikan atau dijelaskan kepada siapa pun. Terkadang, hal paling menyembuhkan bukanlah nasihat, melainkan kehadiran yang tenang — seseorang yang cukup peduli untuk tetap tinggal, meski tidak banyak kata yang diucapkan. Peluk Hari Berat hadir untuk mengingatkan bahwa badai tidak berlangsung selamanya, dan bahwa kamu tidak harus menghadapinya sendirian.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌱</div>
+          <h3>Peluk Selamat Datang</h3>
+          <p>Setiap permulaan baru sering membawa campuran rasa gugup dan harap. Peluk Selamat Datang adalah simbol sambutan hangat untuk setiap langkah baru — entah itu tempat baru, fase hidup baru, atau kesempatan yang baru saja dimulai. Ia mengatakan, "kamu diterima di sini, apa adanya." Tidak ada penilaian, tidak ada tekanan untuk langsung terlihat sempurna. Peluk ini melambangkan pintu yang terbuka lebar, tempat seseorang bisa masuk dengan tenang tanpa rasa takut ditolak. Awal yang baru bisa terasa menakutkan sendirian, tetapi terasa jauh lebih ringan ketika ada yang menyambut dengan tulus. Peluk Selamat Datang hadir untuk menemani transisi itu — mengingatkan bahwa permulaan baru bukanlah sesuatu yang harus dihadapi dengan gelisah, melainkan sesuatu yang boleh disambut dengan tenang dan penuh harapan.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🍃</div>
+          <h3>Peluk Perpisahan</h3>
+          <p>Tidak semua hal harus berakhir dengan patah. Peluk Perpisahan adalah representasi dari pelepasan yang lembut — cara untuk mengucapkan selamat tinggal tanpa harus meninggalkan luka yang dalam. Ia mengakui bahwa perpisahan itu sulit, bahwa rasa sedih dan kehilangan itu wajar, dan bahwa tidak apa-apa untuk berduka atas sesuatu yang telah berakhir. Namun di dalamnya juga tersimpan pesan bahwa berakhirnya sesuatu tidak berarti hilangnya semua makna yang pernah dibangun. Peluk ini menemani proses melepaskan dengan penuh rasa hormat terhadap apa yang pernah ada, sekaligus memberi ruang untuk melangkah maju. Kadang, yang dibutuhkan bukanlah kata-kata penghibur, melainkan seseorang yang membiarkan kita merasakan kesedihan itu sepenuhnya, sebelum akhirnya berjalan lagi.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎉</div>
+          <h3>Peluk Bahagia</h3>
+          <p>Kebahagiaan yang dibagikan terasa dua kali lebih nyata. Peluk Bahagia adalah simbol perayaan atas pencapaian, momen indah, atau sekadar hari baik yang layak disyukuri. Ia hadir bukan hanya untuk momen-momen besar seperti kelulusan atau kesuksesan, tetapi juga untuk kebahagiaan kecil yang sering terlewat — secangkir kopi yang nikmat, cuaca yang cerah, atau berita baik yang datang tiba-tiba. Peluk ini mengatakan, "aku ikut senang untukmu," dengan tulus dan tanpa rasa iri. Merayakan kebahagiaan bersama seseorang yang benar-benar peduli membuat momen itu terasa lebih bermakna, karena kegembiraan yang dibagi cenderung tumbuh, bukan berkurang. Peluk Bahagia hadir sebagai pengingat bahwa merayakan hal-hal kecil sama pentingnya dengan merayakan hal-hal besar.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🤍</div>
+          <h3>Peluk Diam</h3>
+          <p>Tidak semua momen membutuhkan percakapan. Peluk Diam adalah bentuk kehadiran tanpa kata — sebuah pengakuan bahwa terkadang, keheningan yang ditemani terasa lebih menenangkan daripada nasihat terbaik sekalipun. Ia hadir untuk momen-momen ketika kata-kata terasa tidak cukup, atau ketika seseorang hanya ingin didengar tanpa harus menjelaskan apa pun. Peluk ini menghormati keheningan sebagai bentuk komunikasi yang sah, bukan sesuatu yang harus segera diisi atau diperbaiki. Kadang, yang paling dibutuhkan bukanlah solusi cepat, melainkan seseorang yang mau duduk dalam diam bersama kita, membiarkan perasaan itu ada tanpa terburu-buru pergi. Peluk Diam adalah pengingat bahwa kehadiran yang tenang bisa menjadi bentuk dukungan paling dalam.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌷</div>
+          <h3>Peluk Sahabat</h3>
+          <p>Persahabatan sejati sering terlihat dari hal-hal kecil — pesan singkat di saat yang tepat, tawa yang menular, atau kehadiran yang selalu terasa aman. Peluk Sahabat adalah simbol dari ikatan itu: sebuah pengingat bahwa memiliki seseorang yang benar-benar memahami kita adalah salah satu bentuk kekayaan hidup yang paling berharga. Ia melambangkan kepercayaan yang dibangun dari waktu ke waktu, kesetiaan yang tidak bersyarat, dan kenyamanan untuk menjadi diri sendiri tanpa rasa takut dihakimi. Peluk ini merayakan persahabatan dalam segala bentuknya — yang dekat maupun yang jauh, yang lama maupun yang baru — sebagai pengingat bahwa hidup terasa lebih ringan ketika dijalani bersama orang yang tepat.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏡</div>
+          <h3>Peluk Keluarga</h3>
+          <p>Ada kehangatan tertentu yang hanya bisa ditemukan dalam keluarga — tempat di mana kita diterima bukan karena pencapaian, tetapi karena kita adalah bagian darinya. Peluk Keluarga melambangkan rumah dalam artian yang paling dalam: bukan sekadar bangunan, melainkan rasa aman yang tumbuh dari kasih sayang dan penerimaan. Ia mengingatkan bahwa di tengah kesibukan dan jarak yang kadang tercipta, ikatan keluarga tetap menjadi fondasi yang menopang. Peluk ini merayakan setiap bentuk keluarga — yang terikat darah maupun yang terbentuk dari pilihan — sebagai pengingat bahwa selalu ada tempat untuk kembali, dan selalu ada orang yang menunggu dengan pelukan hangat.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Mengapa Kami</span>
+        <h2>Nilai yang Kami Pegang</h2>
+        <p>Bukan tentang seberapa besar, tetapi tentang seberapa tulus.</p>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <h4>Kepercayaan</h4>
+          <p>Setiap kehangatan dibangun di atas rasa percaya yang tidak main-main.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🕊️</div>
+          <h4>Kenyamanan</h4>
+          <p>Ruang yang aman, tanpa tekanan untuk terlihat sempurna.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🛡️</div>
+          <h4>Keamanan</h4>
+          <p>Rasa aman datang lebih dulu, sebelum apa pun yang lain.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🙏</div>
+          <h4>Rasa Hormat</h4>
+          <p>Setiap perasaan dihargai, tidak pernah diremehkan.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💗</div>
+          <h4>Empati</h4>
+          <p>Memahami dulu, sebelum mencoba memperbaiki.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌼</div>
+          <h4>Kebaikan</h4>
+          <p>Kebaikan kecil yang konsisten, lebih berarti dari gestur besar sesekali.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔗</div>
+          <h4>Koneksi</h4>
+          <p>Karena manusia tidak dirancang untuk menghadapi semuanya sendirian.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">✨</div>
+          <h4>Ketulusan</h4>
+          <p>Semua yang ditawarkan di sini datang dari niat yang tulus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi" id="testimoni">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Cerita Mereka</span>
+        <h2>Kata Mereka Tentang Kehangatan Ini</h2>
+        <p>Kisah-kisah ini bersifat fiktif, ditulis untuk menggambarkan nuansa emosional dari setiap konsep pelukan.</p>
+      </div>
+      <div class="testi-grid reveal">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="quote">Membaca setiap bagiannya rasanya seperti dipeluk sungguhan. Sederhana, tapi menyentuh dengan cara yang tidak terduga.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">A</div>
+            <div><b>Aya</b><span>Menerima Peluk Hari Berat</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="quote">Aku tidak menyangka sebuah halaman web bisa membuatku menangis pelan sambil tersenyum. Ini terasa sangat personal.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">R</div>
+            <div><b>Rani</b><span>Menerima Peluk Sahabat</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="quote">Kata-katanya terasa seperti ditulis khusus untuk hatiku yang lelah. Terima kasih sudah mengingatkanku untuk beristirahat.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">D</div>
+            <div><b>Dinda</b><span>Menerima Peluk Semangat</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="quote">Bagian "Peluk Diam" benar-benar menggambarkan apa yang aku rasakan tapi tidak pernah bisa aku ucapkan.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">S</div>
+            <div><b>Sinta</b><span>Menerima Peluk Diam</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="quote">Ide sederhana yang dieksekusi dengan sangat indah. Setiap detailnya terasa penuh perhatian.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">M</div>
+            <div><b>Maya</b><span>Menerima Peluk Bahagia</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="quote">Rasanya hangat, tenang, dan sangat personal. Terima kasih untuk kebaikan yang dituangkan di sini.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">L</div>
+            <div><b>Lala</b><span>Menerima Peluk Keluarga</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section style="padding-top:0;">
+    <div class="cta-banner reveal">
+      <h2>Karena Kamu Pantas Merasa Hangat</h2>
+      <p>Halaman ini dibuat dengan penuh perhatian, sebagai pengingat kecil bahwa kamu selalu berarti dan tidak sendirian.</p>
+      <a href="#tentang" class="btn btn-ghost">Baca Lagi Cerita Kami</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Pertanyaan Umum</span>
+        <h2>Yang Sering Ditanyakan</h2>
+      </div>
+      <div class="faq-list reveal" id="faqList"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-disclaimer">
+      <b>Catatan penting:</b> Jasa Peluk adalah karya kreatif dan personal, dibuat sebagai konsep simbolis tentang kehangatan dan koneksi manusia. Ini bukan bisnis nyata, bukan layanan yang bisa dipesan, bukan layanan kencan, dan tidak melibatkan kontak fisik komersial dalam bentuk apa pun. Seluruh konten — termasuk layanan, testimoni, dan cerita — adalah fiksi yang ditulis untuk tujuan emosional dan artistik semata.
+    </div>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">🤍 Jasa Peluk</div>
+        <p style="font-size:14px;max-width:280px;">Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.</p>
+      </div>
+      <div>
+        <h5>Jelajahi</h5>
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Lainnya</h5>
+        <ul>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Tentang Karya Ini</h5>
+        <ul>
+          <li>Konsep Fiksi</li>
+          <li>Non-Komersial</li>
+          <li>Dibuat dengan Hati</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jasa Peluk — Sebuah Konsep Kreatif Personal.</span>
+      <span>Dibuat dengan ❤️ untuk seseorang yang istimewa.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+
+  // FAQ data
+  const faqData = [
+    ["Apa itu Jasa Peluk?", "Jasa Peluk adalah sebuah konsep kreatif dan personal yang dirancang untuk menyampaikan pesan kehangatan, empati, dan koneksi manusia melalui bentuk visual sebuah situs web. Ini bukan bisnis nyata."],
+    ["Apakah ini layanan yang bisa dipesan sungguhan?", "Tidak. Jasa Peluk tidak menyediakan layanan fisik apa pun yang bisa dipesan atau dibayar. Seluruh konten bersifat simbolis dan fiksi, dibuat sebagai karya emosional untuk satu orang tertentu."],
+    ["Apakah ini semacam layanan kencan atau escort?", "Sama sekali bukan. Jasa Peluk tidak berkaitan dengan layanan kencan, escort, atau kontak fisik komersial dalam bentuk apa pun. Konsep ini murni tentang kehangatan emosional secara simbolis."],
+    ["Lalu, untuk apa situs ini dibuat?", "Situs ini dibuat sebagai hadiah kreatif dan personal — sebuah cara unik untuk menyampaikan perhatian, kepedulian, dan kehangatan kepada seseorang yang berarti, melalui format yang indah dan bermakna."],
+    ["Apa arti dari delapan jenis 'peluk' yang disebutkan?", "Kedelapannya adalah representasi simbolis dari berbagai momen emosional dalam hidup — seperti semangat yang goyah, hari yang berat, awal baru, perpisahan, kebahagiaan, keheningan, persahabatan, dan keluarga."],
+    ["Apakah testimoni di halaman ini nyata?", "Tidak, seluruh testimoni bersifat fiktif dan ditulis untuk menggambarkan nuansa emosional dari setiap konsep, bukan pengalaman nyata dari pengguna sungguhan."],
+    ["Mengapa memilih tema 'pelukan' untuk konsep ini?", "Pelukan dipilih karena ia adalah salah satu bentuk komunikasi paling universal dan jujur — cara menyampaikan kepedulian tanpa perlu kata-kata."],
+    ["Apakah situs ini dimaksudkan untuk publik?", "Tidak. Situs ini dibuat secara khusus dan personal, bukan untuk dirilis atau dipromosikan secara komersial kepada masyarakat umum."],
+    ["Apakah ada transaksi uang yang terlibat?", "Tidak ada. Tidak ada sistem pembayaran, pemesanan, atau transaksi apa pun dalam konsep ini. Semuanya bersifat simbolis dan gratis secara konsep."],
+    ["Bagaimana filosofi di balik Jasa Peluk?", "Filosofinya sederhana: empati mendahului solusi, kebaikan kecil itu penting, dan koneksi manusia adalah kebutuhan dasar, bukan kemewahan."],
+    ["Apakah setiap 'layanan' memiliki makna berbeda?", "Ya, setiap jenis pelukan mewakili momen emosional yang berbeda, dari dukungan semangat hingga kehangatan keluarga, masing-masing dengan nuansa tersendiri."],
+    ["Siapa yang bisa menikmati konsep ini?", "Konsep ini dibuat untuk satu orang tertentu sebagai bentuk perhatian personal, meskipun pesan di dalamnya bersifat universal dan bisa dirasakan siapa saja."],
+    ["Apakah desain situs ini terinspirasi dari sesuatu?", "Desainnya terinspirasi dari estetika modern yang lembut dan hangat — memadukan glassmorphism, warna pastel, dan tipografi yang elegan untuk menciptakan suasana yang menenangkan."],
+    ["Apakah saya bisa menggunakan konsep serupa untuk orang lain?", "Konsep ini dibuat secara personal untuk momen dan orang tertentu. Idenya bisa menginspirasi, namun setiap penerapannya sebaiknya tetap dijaga dalam konteks personal, bukan komersial."],
+    ["Apa pesan utama yang ingin disampaikan situs ini?", "Pesan utamanya adalah bahwa kehangatan dan perhatian kecil bisa berarti sangat besar bagi seseorang, terutama di saat-saat sulit."],
+    ["Apakah ada unsur romantis dalam konsep ini?", "Konsep ini berfokus pada kehangatan, empati, dan dukungan emosional secara umum — bukan dirancang sebagai konten romantis atau dewasa."],
+    ["Bagaimana cara terbaik menikmati situs ini?", "Cara terbaik adalah membacanya dengan tenang, dari atas ke bawah, dan membiarkan setiap kata meresap sebagai pengingat lembut bahwa kehangatan itu nyata."],
+    ["Apakah situs ini bisa diadaptasi untuk momen lain?", "Karena bersifat personal dan simbolis, konsep ini paling bermakna ketika dijaga dalam konteks aslinya — sebagai hadiah emosional yang tulus untuk satu momen tertentu."],
+    ["Kenapa disebut 'premium concept' dalam pembuatannya?", "Istilah tersebut merujuk pada kualitas desain dan kedalaman kontennya, bukan pada nilai komersial — menandakan bahwa perhatian dan usaha besar dicurahkan untuk membuatnya terasa istimewa."],
+    ["Apa yang membuat Jasa Peluk berbeda dari situs lain?", "Yang membuatnya berbeda adalah niatnya: dibuat bukan untuk menjual sesuatu, melainkan untuk memberi — sebuah karya yang lahir murni dari ketulusan dan perhatian personal."]
+  ];
+
+  const faqList = document.getElementById('faqList');
+  faqData.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'faq-item';
+    div.innerHTML = `
+      <div class="faq-q">
+        <span>${item[0]}</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">${item[1]}</div></div>
+    `;
+    div.addEventListener('click', () => {
+      const isOpen = div.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+      if (!isOpen) div.classList.add('open');
+    });
+    faqList.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
