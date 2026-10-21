@@ -244,7 +244,7 @@ body.inflow #petals{z-index:901}
 .car-dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .3s}
 .car-dots i.on{background:var(--gold)}
 .msg-big{font-family:var(--serif);font-size:clamp(23px,4.6vw,30px)!important;line-height:1.55;color:var(--ivory)!important}
-.ask-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;min-height:112px;position:relative;margin-top:18px}
+.ask-row{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:112px;position:relative;margin-top:18px}
 .final{display:none}
 .final.show{display:block}
 .heart-fly{position:fixed;bottom:-30px;z-index:960;pointer-events:none;color:var(--rose);opacity:.9;animation:fly 3.4s ease-in forwards}
@@ -355,7 +355,7 @@ body.inflow #petals{z-index:901}
     <div class="container hero-inner">
       <div>
         <span class="eyebrow">SEBUAH KONSEP, HANYA DI BUAT UNTUKMU</span>
-        <h1>Terkadang, Viony hanya butuh <em>satu pelukan</em> dari aku.</h1>
+        <h1>Terkadang, Viony hanya butuh <em>satu pelukan</em> dari Aku</h1>
         <p class="lead">Jasa Peluk ini dibuat dengan hati untuk seseorang yang berarti. Dan setelah kupikir-pikir, “seseorang” itu selalu mengarah ke kamu. Jadi, kapan kita berhenti main imajinasi dan beralih ke kenyataan?</p>
         <p class="hero-note">Delapan jenis kehangatan, satu alasan: kamu.</p>
       </div>
@@ -498,7 +498,7 @@ window.CONFIG={
     'Hai, Viony.',
     'Aku membuat ruang kecil ini bukan untuk dijual, bukan untuk dipamerkan.',
     'Hanya untuk satu orang: kamu.',
-    'Ada beberapa langkah di depan. Pelan-pelan saja ya.'
+    'Ada beberapa langkah di depan. Pelan-pelan saja yaa.'
   ],
   hugs:{
     'Kasih Sayang':['💞','Kamu adalah tempat paling tenang yang kutemukan. Aku sayang kamu, hari ini dan di hari-hari berikutnya.'],
@@ -725,14 +725,18 @@ window.CONFIG={
   $('carNext').addEventListener('click',function(){slide(1)});
 
   /* 5: penutup */
-  var noBtn=$('noBtn'),dodge=0;
+  var noBtn=$('noBtn'),dodge=0,MAXD=10,nx=0,baseL=0;
   function dodgeMove(e){
-    if(dodge>=3)return;
+    if(dodge>=MAXD)return;
     if(e&&e.cancelable&&e.type==='touchstart')e.preventDefault();
     dodge++;
-    var x=(Math.random()*160-80),y=(Math.random()*60-10);
-    noBtn.style.transform='translate('+x+'px,'+y+'px)';noBtn.style.transition='transform .25s';
-    if(dodge>=3){noBtn.style.transform='none';noBtn.textContent='BAIKLAH, IYA'}
+    if(dodge>=MAXD){noBtn.style.transform='none';noBtn.textContent='BAIKLAH, IYA';return}
+    var r=noBtn.getBoundingClientRect();
+    if(dodge===1)baseL=r.left;
+    var lo=Math.max(-90,12-baseL),hi=Math.min(90,innerWidth-12-r.width-baseL);
+    nx=lo+Math.random()*Math.max(0,hi-lo);
+    var y=Math.random()*60-10;
+    noBtn.style.transition='transform .25s';noBtn.style.transform='translate('+nx+'px,'+y+'px)';
   }
   noBtn.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')dodgeMove(e)});
   noBtn.addEventListener('touchstart',dodgeMove,{passive:false});
@@ -742,7 +746,7 @@ window.CONFIG={
     $('finalBox').classList.add('show');hearts(40);
   }
   $('yesBtn').addEventListener('click',yes);
-  noBtn.addEventListener('click',function(){if(dodge>=3)yes()});
+  noBtn.addEventListener('click',function(){if(dodge>=MAXD)yes()});
   $('openSite').addEventListener('click',function(){
     flow.classList.add('hide');document.body.classList.remove('locked','inflow');scrollTo(0,0);
     setTimeout(function(){flow.style.display='none'},1200);
