@@ -1,807 +1,473 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jasa Peluk — Karena Satu Pelukan Bisa Lebih Berarti</title>
-<meta name="description" content="Jasa Peluk adalah konsep kreatif dan personal tentang kehangatan, kepedulian, dan koneksi antar manusia. Sebuah hadiah, bukan layanan komersial.">
-<meta property="og:title" content="Jasa Peluk">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#14090f">
+<title>Jasa Peluk Gilang — Karena Satu Pelukan Bisa Lebih Berarti</title>
+<meta name="description" content="Jasa Peluk adalah karya kreatif dan personal tentang kehangatan, kepedulian, dan koneksi antar manusia. Sebuah hadiah, bukan layanan komersial.">
+<meta property="og:title" content="Jasa Peluk Gilang">
 <meta property="og:description" content="Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="foto-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jasa Peluk">
+<meta name="twitter:title" content="Jasa Peluk Gilang">
 <meta name="twitter:description" content="Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Jasa Peluk",
-  "description": "Sebuah konsep kreatif dan personal tentang kehangatan dan koneksi manusia. Bukan layanan komersial nyata.",
-  "genre": "Fiction"
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --primary:#FF5C8A;
-    --primary-soft:#FFB3C9;
-    --secondary:#8B5CF6;
-    --accent:#FFD166;
-    --bg:#FFF7FB;
-    --white:#FFFFFF;
-    --ink:#2B1F2E;
-    --ink-soft:#6B5A6B;
-    --line:rgba(139,92,246,0.12);
-    --shadow-soft: 0 20px 60px rgba(139,92,246,0.14);
-    --shadow-glow: 0 0 40px rgba(255,92,138,0.35);
-    --radius-lg: 28px;
-    --radius-md: 20px;
-    --radius-sm: 14px;
-    --font-display:'Poppins',sans-serif;
-    --font-body:'Plus Jakarta Sans',sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:var(--font-body);
-    background:var(--bg);
-    color:var(--ink);
-    overflow-x:hidden;
-    line-height:1.6;
-  }
-  ::selection{background:var(--primary-soft);}
-  a{text-decoration:none;color:inherit;}
-  ul{list-style:none;}
-  img,svg{display:block;max-width:100%;}
-  .container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.01em;}
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--secondary);
-    background:rgba(139,92,246,0.08);
-    padding:8px 16px;
-    border-radius:999px;
-    margin-bottom:20px;
-  }
-  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--primary);}
+:root{
+  --night:#14090f; --wine:#2a0f1c; --wine2:#3a1626;
+  --gold:#d8b98a; --gold-d:#a9885c; --rose:#e2899f; --blush:#f3d6dc; --ivory:#f6ece4;
+  --soft:rgba(246,236,228,.72); --line:rgba(216,185,138,.28);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;background:var(--night);color:var(--ivory);line-height:1.75;overflow-x:hidden;font-size:16px}
+body.locked{overflow:hidden}
+::selection{background:var(--rose);color:var(--night)}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:.005em}
+section{padding:110px 0;position:relative;z-index:2}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:18px}
+.eyebrow::before,.eyebrow::after{content:"";display:inline-block;width:28px;height:1px;background:var(--gold-d);vertical-align:middle;margin:0 12px}
+.section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.section-head h2{font-size:clamp(32px,5vw,50px);margin-bottom:16px}
+.section-head p{color:var(--soft)}
+em{font-style:italic;color:var(--blush)}
 
-  /* ===== Fiction badge ===== */
-  .fiction-note{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    z-index:999;
-    background:rgba(43,31,46,0.92);
-    color:#fff;
-    font-size:12.5px;
-    padding:10px 16px;
-    border-radius:999px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.25);
-    max-width:260px;
-    line-height:1.4;
-    backdrop-filter:blur(6px);
-    opacity:0.92;
-  }
+/* gate */
+#gate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+  background:radial-gradient(ellipse at 50% 40%,var(--wine2),var(--night) 70%);transition:opacity 1.2s ease,visibility 1.2s}
+#gate.hide{opacity:0;visibility:hidden}
+.gate-box{max-width:440px}
+.gate-heart{font-size:34px;color:var(--rose);margin-bottom:20px;animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.gate-box h1{font-size:clamp(34px,8vw,52px);margin-bottom:12px}
+.gate-box p{color:var(--soft);margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 34px;border:1px solid var(--gold);color:var(--gold);background:transparent;font:400 14px var(--sans);letter-spacing:.14em;cursor:pointer;border-radius:2px;transition:background .3s,color .3s}
+.btn:hover{background:var(--gold);color:var(--night)}
+.btn.fill{background:var(--gold);color:var(--night)}
+.btn.fill:hover{background:var(--blush);border-color:var(--blush)}
+.gate-skip{display:block;margin:20px auto 0;background:none;border:0;color:var(--soft);font:300 13px var(--sans);cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:44px}
 
-  /* ===== Nav ===== */
-  header{
-    position:fixed;
-    top:0;left:0;right:0;
-    z-index:100;
-    padding:18px 0;
-    transition:all .3s ease;
-  }
-  header.scrolled{
-    background:rgba(255,247,251,0.75);
-    backdrop-filter:blur(16px);
-    box-shadow:0 4px 24px rgba(139,92,246,0.08);
-  }
-  nav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:var(--font-display);
-    font-weight:800;
-    font-size:20px;
-    color:var(--ink);
-  }
-  .logo-mark{
-    width:38px;height:38px;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 20px rgba(255,92,138,0.35);
-  }
-  .nav-links{
-    display:flex;
-    gap:36px;
-    font-size:15px;
-    font-weight:500;
-    color:var(--ink-soft);
-  }
-  .nav-links a{ position:relative; transition:color .25s;}
-  .nav-links a:hover{color:var(--primary);}
-  .nav-cta{
-    display:flex;align-items:center;gap:14px;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:14px 28px;
-    border-radius:999px;
-    font-weight:600;
-    font-size:15px;
-    cursor:pointer;
-    border:none;
-    transition:transform .25s ease, box-shadow .25s ease;
-    font-family:var(--font-body);
-  }
-  .btn-primary{
-    background:linear-gradient(135deg,var(--primary),#ff8fae);
-    color:#fff;
-    box-shadow:0 12px 30px rgba(255,92,138,0.35);
-  }
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(255,92,138,0.45);}
-  .btn-ghost{
-    background:rgba(255,255,255,0.6);
-    color:var(--ink);
-    border:1px solid var(--line);
-    backdrop-filter:blur(8px);
-  }
-  .btn-ghost:hover{background:#fff;transform:translateY(-3px);}
-  .btn-sm{padding:10px 20px;font-size:14px;}
+/* petals + sound */
+#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.sound-btn{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:500;width:48px;height:48px;border-radius:50%;
+  background:rgba(20,9,15,.78);border:1px solid var(--gold-d);color:var(--gold);cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center}
+.sound-btn svg{width:20px;height:20px}
+.sound-btn .off{display:none}
+.sound-btn.muted .on{display:none}.sound-btn.muted .off{display:block}
 
-  /* ===== Hero ===== */
-  .hero{
-    position:relative;
-    padding:170px 0 120px;
-    overflow:hidden;
-  }
-  .hero-blob{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(60px);
-    opacity:0.55;
-    animation:float 14s ease-in-out infinite;
-    z-index:0;
-  }
-  .blob1{width:420px;height:420px;background:radial-gradient(circle,var(--primary-soft),transparent 70%);top:-120px;right:-100px;}
-  .blob2{width:380px;height:380px;background:radial-gradient(circle,var(--secondary),transparent 70%);opacity:0.25;top:200px;left:-160px;animation-delay:3s;}
-  .blob3{width:300px;height:300px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:0.35;bottom:-100px;right:20%;animation-delay:6s;}
-  @keyframes float{
-    0%,100%{transform:translateY(0) translateX(0) scale(1);}
-    50%{transform:translateY(-30px) translateX(20px) scale(1.05);}
-  }
-  .hero-inner{
-    position:relative;
-    z-index:2;
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:60px;
-    align-items:center;
-  }
-  .hero h1{
-    font-size:clamp(38px,5vw,64px);
-    line-height:1.08;
-    margin-bottom:24px;
-    background:linear-gradient(120deg,var(--ink) 40%, var(--secondary) 70%, var(--primary));
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
-  .hero p.lead{
-    font-size:18px;
-    color:var(--ink-soft);
-    max-width:520px;
-    margin-bottom:36px;
-  }
-  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
-  .hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
-  .hero-stat b{font-family:var(--font-display);font-size:22px;display:block;color:var(--ink);}
-  .hero-stat span{font-size:13px;color:var(--ink-soft);}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:600;padding:16px 0;transition:background .4s,padding .4s}
+header.scrolled{background:rgba(20,9,15,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 0}
+nav{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--gold);display:flex;align-items:center;gap:10px}
+.logo i{font-style:normal;color:var(--rose)}
+.nav-links{display:flex;gap:34px;font-size:14px;letter-spacing:.08em}
+.nav-links a{color:var(--soft);transition:color .25s;padding:8px 0}
+.nav-links a:hover{color:var(--gold)}
+.menu-btn{display:none;width:48px;height:48px;background:none;border:0;cursor:pointer;color:var(--gold);align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:24px;height:1.5px;background:currentColor;position:relative;transition:transform .3s,background .3s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-7px}.menu-btn span::after{top:7px}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{transform:translateY(-7px) rotate(-45deg)}
 
-  .hero-visual{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .glass-card{
-    background:rgba(255,255,255,0.55);
-    border:1px solid rgba(255,255,255,0.7);
-    border-radius:var(--radius-lg);
-    backdrop-filter:blur(18px);
-    box-shadow:var(--shadow-soft);
-    padding:28px;
-  }
-  .hero-main-card{
-    width:100%;
-    max-width:420px;
-    padding:36px;
-    text-align:center;
-    position:relative;
-  }
-  .hero-illustration{
-    width:180px;height:180px;
-    margin:0 auto 20px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:var(--shadow-glow);
-    animation:pulseGlow 4s ease-in-out infinite;
-  }
-  @keyframes pulseGlow{
-    0%,100%{box-shadow:0 0 30px rgba(255,92,138,0.35);}
-    50%{box-shadow:0 0 55px rgba(255,92,138,0.55);}
-  }
-  .hero-main-card h3{font-size:19px;margin-bottom:8px;}
-  .hero-main-card p{font-size:14px;color:var(--ink-soft);}
-  .floating-chip{
-    position:absolute;
-    padding:12px 18px;
-    border-radius:16px;
-    font-size:13px;
-    font-weight:600;
-    display:flex;align-items:center;gap:8px;
-    animation:bob 5s ease-in-out infinite;
-  }
-  .chip1{top:0;left:-30px;background:#fff;box-shadow:var(--shadow-soft);}
-  .chip2{bottom:20px;right:-40px;background:#fff;box-shadow:var(--shadow-soft);animation-delay:1.5s;}
-  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:130px 0 90px;background:radial-gradient(ellipse at 75% 20%,rgba(226,137,159,.22),transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(216,185,138,.12),transparent 50%),linear-gradient(180deg,var(--night),var(--wine))}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(42px,6.4vw,78px);margin-bottom:26px;font-weight:400}
+.hero .lead{color:var(--soft);font-size:17px;max-width:500px;margin-bottom:38px}
+.hero-note{margin-top:44px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold)}
+.arch{position:relative;max-width:400px;margin:0 auto;width:100%}
+.arch::before{content:"";position:absolute;inset:-14px;border:1px solid var(--line);border-radius:999px 999px 6px 6px}
+.frame{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--wine2),var(--night));aspect-ratio:4/5}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.frame:hover img{transform:scale(1.04)}
+.frame.noimg img{display:none}
+.frame.noimg::after{content:"♡";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:56px;color:var(--gold-d)}
+.arch .frame{border-radius:999px 999px 4px 4px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.arch figcaption{text-align:center;margin-top:30px;font-family:var(--serif);font-style:italic;color:var(--soft);font-size:18px}
 
-  /* ===== Section generic ===== */
-  section{padding:110px 0;position:relative;}
-  .section-head{max-width:720px;margin:0 auto 60px;text-align:center;}
-  .section-head h2{font-size:clamp(30px,4vw,44px);margin-bottom:18px;}
-  .section-head p{font-size:17px;color:var(--ink-soft);}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease, transform .8s ease;}
-  .reveal.visible{opacity:1;transform:translateY(0);}
+/* intro + about */
+.intro{background:var(--wine)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.intro h2{font-size:clamp(30px,4.4vw,44px);margin-bottom:22px}
+.intro p{color:var(--soft);margin-bottom:16px}
+.moments{display:grid;gap:18px}
+.moment{border:1px solid var(--line);padding:24px 26px;background:rgba(20,9,15,.35)}
+.moment h4{font-size:22px;color:var(--gold);margin-bottom:4px}
+.moment p{margin:0;font-size:15px}
+.about-inner{max-width:720px;margin:0 auto}
+.about-inner p{color:var(--soft);margin-bottom:22px;font-size:17px}
+.about-inner p:first-of-type{color:var(--ivory);font-size:19px}
+.pull-quote{font-family:var(--serif);font-style:italic;font-size:clamp(25px,3.6vw,34px);line-height:1.4;color:var(--blush)!important;text-align:center;margin:46px 0!important;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wide-frame{max-width:720px;margin:0 auto 48px}
+.wide-frame .frame{aspect-ratio:4/3}
 
-  /* ===== Home / intro content ===== */
-  .intro{background:linear-gradient(180deg,var(--bg),#fff);}
-  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
-  .intro-text p{color:var(--ink-soft);font-size:16.5px;margin-bottom:18px;}
-  .intro-card-stack{position:relative;height:420px;}
-  .stack-card{
-    position:absolute;
-    width:78%;
-    padding:28px;
-    border-radius:var(--radius-md);
-  }
-  .stack-card.a{background:#fff;box-shadow:var(--shadow-soft);top:0;left:0;transform:rotate(-4deg);}
-  .stack-card.b{background:linear-gradient(135deg,var(--secondary),#a78bfa);color:#fff;top:90px;left:22%;transform:rotate(3deg);box-shadow:0 20px 50px rgba(139,92,246,0.3);}
-  .stack-card.c{background:linear-gradient(135deg,var(--primary),#ff8fae);color:#fff;top:190px;left:6%;transform:rotate(-2deg);box-shadow:0 20px 50px rgba(255,92,138,0.3);}
-  .stack-card h4{font-size:16px;margin-bottom:6px;}
-  .stack-card p{font-size:13.5px;opacity:0.9;}
+/* gallery */
+.gallery{background:var(--wine)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gal-grid .frame{aspect-ratio:3/4;border:1px solid var(--line)}
+.gal-grid figure:nth-child(even){margin-top:34px}
 
-  /* ===== About ===== */
-  .about{background:#fff;}
-  .about-inner{max-width:760px;margin:0 auto;}
-  .about-inner p{color:var(--ink-soft);font-size:16.5px;margin-bottom:20px;}
-  .about-inner p:first-of-type{
-    font-size:19px;
-    color:var(--ink);
-    font-weight:500;
-  }
-  .pull-quote{
-    font-family:var(--font-display);
-    font-size:22px;
-    color:var(--secondary);
-    border-left:3px solid var(--primary);
-    padding-left:24px;
-    margin:36px 0;
-    line-height:1.5;
-  }
+/* services */
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.service-card{border:1px solid var(--line);padding:34px 32px;background:linear-gradient(160deg,rgba(58,22,38,.55),rgba(20,9,15,.6));transition:border-color .4s}
+.service-card:hover{border-color:var(--gold)}
+.service-card h3{font-size:27px;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.service-card h3 span{font-size:22px}
+.service-card p{color:var(--soft);font-size:15.5px}
 
-  /* ===== Services ===== */
-  .services{background:linear-gradient(180deg,#fff,var(--bg));}
-  .service-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:28px;
-  }
-  .service-card{
-    background:#fff;
-    border-radius:var(--radius-md);
-    padding:32px;
-    border:1px solid var(--line);
-    transition:transform .3s ease, box-shadow .3s ease;
-    position:relative;
-    overflow:hidden;
-  }
-  .service-card::before{
-    content:'';
-    position:absolute;top:0;left:0;right:0;height:4px;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    opacity:0;
-    transition:opacity .3s ease;
-  }
-  .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
-  .service-card:hover::before{opacity:1;}
-  .service-icon{
-    width:52px;height:52px;
-    border-radius:16px;
-    display:flex;align-items:center;justify-content:center;
-    background:rgba(255,92,138,0.1);
-    margin-bottom:18px;
-    font-size:22px;
-  }
-  .service-card h3{font-size:19px;margin-bottom:10px;}
-  .service-card p{font-size:14.5px;color:var(--ink-soft);}
+/* values */
+.why{background:linear-gradient(180deg,var(--night),var(--wine))}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.why-card{padding:34px 22px;text-align:center;border:1px solid var(--line);margin:-1px 0 0 -1px}
+.why-card .ic{font-size:26px;margin-bottom:10px}
+.why-card h4{font-size:23px;color:var(--gold);margin-bottom:6px}
+.why-card p{font-size:14.5px;color:var(--soft)}
 
-  /* ===== Why choose ===== */
-  .why{background:#fff;}
-  .why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:24px;
-  }
-  .why-card{
-    text-align:center;
-    padding:32px 20px;
-    border-radius:var(--radius-md);
-    background:var(--bg);
-    transition:transform .3s ease;
-  }
-  .why-card:hover{transform:translateY(-6px);}
-  .why-icon{
-    width:56px;height:56px;
-    margin:0 auto 16px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:22px;
-    box-shadow:0 10px 24px rgba(255,92,138,0.3);
-  }
-  .why-card h4{font-size:16px;margin-bottom:8px;}
-  .why-card p{font-size:13.5px;color:var(--ink-soft);}
 
-  /* ===== Testimonials ===== */
-  .testi{background:linear-gradient(180deg,var(--bg),#fff);}
-  .testi-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:26px;
-  }
-  .testi-card{
-    background:#fff;
-    border-radius:var(--radius-md);
-    padding:30px;
-    box-shadow:0 10px 30px rgba(139,92,246,0.08);
-  }
-  .testi-stars{color:var(--accent);font-size:15px;margin-bottom:14px;letter-spacing:2px;}
-  .testi-card p.quote{font-size:15px;color:var(--ink);margin-bottom:20px;font-style:italic;}
-  .testi-person{display:flex;align-items:center;gap:12px;}
-  .testi-avatar{
-    width:42px;height:42px;border-radius:50%;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-weight:700;font-size:15px;
-  }
-  .testi-person b{font-size:14px;display:block;}
-  .testi-person span{font-size:12px;color:var(--ink-soft);}
+/* cta + faq */
+.cta{padding:0 24px;position:relative;z-index:2}
+.cta-banner{max-width:1072px;margin:0 auto;text-align:center;padding:84px 28px;border:1px solid var(--gold-d);background:radial-gradient(ellipse at 50% 0,rgba(226,137,159,.22),transparent 65%),var(--wine)}
+.cta-banner h2{font-size:clamp(30px,5vw,48px);margin-bottom:16px}
+.cta-banner p{color:var(--soft);max-width:520px;margin:0 auto 32px}
+.faq-list{max-width:740px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;background:none;border:0;color:var(--ivory);font:500 21px/1.3 var(--serif);padding:22px 0;cursor:pointer;min-height:56px}
+.faq-q .plus{color:var(--gold);font-size:26px;transition:transform .3s;flex-shrink:0}
+.faq-item.open .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--soft);font-size:15.5px}
+.faq-a p{padding-bottom:22px}
+.faq-item.open .faq-a{max-height:420px}
 
-  /* ===== FAQ ===== */
-  .faq{background:#fff;}
-  .faq-list{max-width:760px;margin:0 auto;}
-  .faq-item{
-    border-bottom:1px solid var(--line);
-    padding:22px 0;
-    cursor:pointer;
-  }
-  .faq-q{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:16px;
-  }
-  .faq-q .icon{
-    width:28px;height:28px;
-    border-radius:50%;
-    background:var(--bg);
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-    transition:transform .3s ease;
-    font-size:16px;
-    color:var(--primary);
-  }
-  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
-  .faq-a{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .35s ease;
-    font-size:14.5px;
-    color:var(--ink-soft);
-  }
-  .faq-a-inner{padding-top:14px;}
-  .faq-item.open .faq-a{max-height:400px;}
+footer{position:relative;z-index:2;background:#0d0509;border-top:1px solid var(--line);padding:70px 0 34px;margin-top:110px;color:var(--soft)}
+.disclaimer{border:1px solid var(--line);padding:20px 24px;font-size:13.5px;margin-bottom:44px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.footer-logo{font-family:var(--serif);font-size:26px;color:var(--gold);margin-bottom:10px}
+footer h5{font:500 13px var(--sans);letter-spacing:.18em;color:var(--gold);margin-bottom:14px}
+footer li{margin-bottom:8px;font-size:14.5px}
+footer li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px}
 
-  /* ===== CTA banner ===== */
-  .cta-banner{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    border-radius:var(--radius-lg);
-    padding:70px 50px;
-    text-align:center;
-    color:#fff;
-    position:relative;
-    overflow:hidden;
-    margin:0 24px;
-  }
-  .cta-banner h2{font-size:clamp(26px,4vw,38px);margin-bottom:16px;color:#fff;}
-  .cta-banner p{color:rgba(255,255,255,0.9);max-width:560px;margin:0 auto 30px;}
-  .cta-banner .btn-ghost{background:#fff;color:var(--primary);border:none;}
+/* reveal (hanya aktif bila JS jalan) */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
+.js .reveal.visible{opacity:1;transform:none}
 
-  /* ===== Footer ===== */
-  footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:70px 0 30px;}
-  .footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:40px;
-    margin-bottom:50px;
-  }
-  .footer-logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-display);font-weight:700;font-size:19px;margin-bottom:16px;}
-  footer h5{color:#fff;font-size:14px;margin-bottom:18px;letter-spacing:0.04em;text-transform:uppercase;}
-  footer ul li{margin-bottom:10px;font-size:14px;}
-  footer ul li a:hover{color:var(--primary-soft);}
-  .footer-bottom{
-    border-top:1px solid rgba(255,255,255,0.1);
-    padding-top:24px;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-    font-size:12.5px;
-    color:rgba(255,255,255,0.5);
-  }
-  .footer-disclaimer{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:16px;
-    padding:20px 24px;
-    font-size:13px;
-    line-height:1.6;
-    margin-bottom:40px;
-    color:rgba(255,255,255,0.6);
-  }
+@media (max-width:960px){
+  section{padding:84px 0}
+  .menu-btn{display:flex}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(80vw,320px);flex-direction:column;justify-content:center;gap:10px;padding:40px 36px;background:var(--night);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .45s ease;font-size:20px;font-family:var(--serif);letter-spacing:.02em}
+  .nav-links.open{transform:none}
+  .nav-links a{display:block;padding:12px 0;font-size:24px}
+  .hero-inner,.intro-grid{grid-template-columns:1fr;gap:48px}
+  .hero{padding-top:110px}
+  .arch{max-width:320px}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-grid figure:nth-child(even){margin-top:0}
+  .service-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
+}
+@media (max-width:480px){
+  .container{padding:0 20px}
+  .service-card{padding:28px 22px}
+  .cta-banner{padding:60px 22px}
+  .eyebrow::before,.eyebrow::after{width:14px;margin:0 8px}
+  .footer-bottom{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
 
-  @media (max-width:960px){
-    .nav-links{display:none;}
-    .hero-inner{grid-template-columns:1fr;}
-    .intro-grid{grid-template-columns:1fr;}
-    .intro-card-stack{height:320px;margin-top:40px;}
-    .service-grid{grid-template-columns:1fr;}
-    .why-grid{grid-template-columns:repeat(2,1fr);}
-    .testi-grid{grid-template-columns:1fr;}
-    .footer-grid{grid-template-columns:1fr 1fr;}
-    .cta-banner{margin:0 12px;padding:50px 24px;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important;transition:none !important;}
-  }
+/* ===== ALUR UCAPAN (password + langkah) ===== */
+.sound-btn{z-index:950}
+body.inflow #petals{z-index:901}
+#flow{position:fixed;inset:0;z-index:900;background:radial-gradient(ellipse at 50% 30%,var(--wine2),var(--night) 75%);transition:opacity 1.1s ease,visibility 1.1s}
+#flow.hide{opacity:0;visibility:hidden}
+.flow-bar{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:calc(14px + env(safe-area-inset-top)) 16px 10px;min-height:68px}
+.flow-back{position:absolute;left:max(8px,env(safe-area-inset-left));top:calc(10px + env(safe-area-inset-top));width:48px;height:48px;background:none;border:0;color:var(--gold);font-size:26px;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s}
+.flow-back.show{opacity:1;visibility:visible}
+.flow-dots{display:flex;gap:10px;opacity:0;transition:opacity .4s}
+.flow-dots.show{opacity:1}
+.flow-dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--gold-d);transition:background .4s,transform .4s}
+.flow-dots i.on{background:var(--gold);transform:scale(1.3)}
+.flow-dots i.done{background:var(--gold-d)}
+.stage{position:absolute;inset:0;display:flex;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease,visibility .7s}
+.stage.active{opacity:1;visibility:visible;transform:none}
+.stage.out{transform:translateY(-18px)}
+.stage-box{margin:auto;width:100%;max-width:560px;padding:84px 24px calc(60px + env(safe-area-inset-bottom));text-align:center}
+.stage-box h2{font-size:clamp(30px,6vw,44px);margin-bottom:14px}
+.stage-box>p{color:var(--soft);margin-bottom:26px}
+.stage-box .btn{margin-top:10px}
+.btn[disabled]{opacity:.35;pointer-events:none}
+.pin{display:flex;justify-content:center;gap:18px;margin:8px 0 14px}
+.pin i{width:15px;height:15px;border-radius:50%;border:1px solid var(--gold);transition:background .2s}
+.pin i.f{background:var(--gold)}
+.pin.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+.lock-msg{min-height:26px;font-size:14.5px;color:var(--rose);margin-bottom:12px}
+.lock-msg.ok{color:var(--gold)}
+.keypad{display:grid;grid-template-columns:repeat(3,72px);gap:14px;justify-content:center}
+.key{width:72px;height:72px;border-radius:50%;border:1px solid var(--line);background:rgba(20,9,15,.5);color:var(--ivory);font:400 26px var(--serif);cursor:pointer;transition:background .2s,border-color .2s}
+.key:hover,.key:active{background:var(--wine2);border-color:var(--gold)}
+.key.blank{visibility:hidden}
+.type{font-family:var(--serif);font-size:clamp(22px,4.4vw,28px)!important;line-height:1.6;color:var(--ivory)!important;min-height:230px;text-align:left}
+.type.caret::after{content:"|";color:var(--gold);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hug-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:22px}
+.hug{padding:16px 10px;border:1px solid var(--line);background:rgba(20,9,15,.45);color:var(--ivory);font:400 16px var(--serif);cursor:pointer;min-height:56px;transition:border-color .3s,background .3s}
+.hug span{display:block;font-size:22px}
+.hug.sel{border-color:var(--gold);background:var(--wine2);color:var(--gold)}
+.hug-msg{min-height:120px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 8px;margin-bottom:10px;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.55;color:var(--blush);display:flex;align-items:center;justify-content:center}
+.car-wrap{position:relative}
+.car{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -24px;padding:0 11%}
+.car::-webkit-scrollbar{display:none}
+.slide{flex:0 0 78%;scroll-snap-align:center}
+.slide .frame{aspect-ratio:3/4;border:1px solid var(--line)}
+.car-cap{min-height:60px;margin:18px 0 6px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blush)}
+.car-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:6px}
+.car-nav button{width:44px;height:44px;background:none;border:1px solid var(--line);color:var(--gold);font-size:20px;border-radius:50%;cursor:pointer}
+.car-dots{display:flex;gap:8px}
+.car-dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .3s}
+.car-dots i.on{background:var(--gold)}
+.msg-big{font-family:var(--serif);font-size:clamp(23px,4.6vw,30px)!important;line-height:1.55;color:var(--ivory)!important}
+.ask-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;min-height:112px;position:relative;margin-top:18px}
+.final{display:none}
+.final.show{display:block}
+.heart-fly{position:fixed;bottom:-30px;z-index:960;pointer-events:none;color:var(--rose);opacity:.9;animation:fly 3.4s ease-in forwards}
+@keyframes fly{to{transform:translate(var(--dx),-112vh) rotate(25deg);opacity:0}}
+@media (max-width:380px){.keypad{grid-template-columns:repeat(3,64px);gap:12px}.key{width:64px;height:64px}}
 </style>
 </head>
-<body>
+<body class="locked">
+<script>document.documentElement.classList.add('js')</script>
 
-<div class="fiction-note">✦ Konsep kreatif &amp; personal — bukan layanan komersial nyata.</div>
+<div id="gate" role="dialog" aria-label="Pembuka">
+  <div class="gate-box">
+    <div class="gate-heart" aria-hidden="true">♥</div>
+    <h1>Untuk <em>Viony</em></h1>
+    <p>Sebuah ruang kecil yang dibuat dengan hati. Nyalakan suara agar lebih terasa.</p>
+    <button class="btn fill" id="enterSound" type="button">MASUK DENGAN MUSIK</button>
+    <button class="gate-skip" id="enterMute" type="button">Masuk tanpa musik</button>
+  </div>
+</div>
+
+<div id="flow" aria-label="Langkah menikmati ucapan">
+  <div class="flow-bar">
+    <button class="flow-back" id="flowBack" type="button" aria-label="Kembali">←</button>
+    <div class="flow-dots" id="flowDots"></div>
+  </div>
+
+  <div class="stage" id="st0"><div class="stage-box">
+    <div class="gate-heart" aria-hidden="true">♥</div>
+    <h2>Masukkan kode</h2>
+    <p id="lockHint"></p>
+    <div class="pin" id="pinDots"><i></i><i></i><i></i><i></i></div>
+    <div class="lock-msg" id="lockMsg" role="status"></div>
+    <div class="keypad" id="keypad"></div>
+  </div></div>
+
+  <div class="stage" id="st1"><div class="stage-box">
+    <span class="eyebrow">LANGKAH 1</span>
+    <p class="type" id="typeBox"></p>
+    <button class="btn fill" type="button" data-next id="n1" disabled>LANJUT</button>
+  </div></div>
+
+  <div class="stage" id="st2"><div class="stage-box">
+    <span class="eyebrow">LANGKAH 2</span>
+    <h2>Pilih satu pelukan yang kamu butuhkan hari ini</h2>
+    <p>Ketuk salah satu.</p>
+    <div class="hug-grid" id="hugGrid"></div>
+    <div class="hug-msg" id="hugMsg">…</div>
+    <button class="btn fill" type="button" data-next id="n2" disabled>LANJUT</button>
+  </div></div>
+
+  <div class="stage" id="st3"><div class="stage-box">
+    <span class="eyebrow">LANGKAH 3</span>
+    <h2>Potongan kenangan</h2>
+    <p>Geser ke samping untuk melihat satu per satu.</p>
+    <div class="car-wrap"><div class="car" id="car"></div></div>
+    <div class="car-cap" id="carCap"></div>
+    <div class="car-nav"><button type="button" id="carPrev" aria-label="Sebelumnya">‹</button><div class="car-dots" id="carDots"></div><button type="button" id="carNext" aria-label="Berikutnya">›</button></div>
+    <button class="btn fill" type="button" data-next>LANJUT</button>
+  </div></div>
+
+  <div class="stage" id="st4"><div class="stage-box">
+    <span class="eyebrow">LANGKAH 4</span>
+    <h2 id="mainTitle"></h2>
+    <p class="msg-big" id="mainText"></p>
+    <button class="btn fill" type="button" data-next>LANJUT</button>
+  </div></div>
+
+  <div class="stage" id="st5"><div class="stage-box">
+    <span class="eyebrow">LANGKAH TERAKHIR</span>
+    <div id="askBox">
+      <h2 id="askQ"></h2>
+      <div class="ask-row"><button class="btn fill" type="button" id="yesBtn">IYA</button><button class="btn" type="button" id="noBtn">NANTI DULU</button></div>
+    </div>
+    <div class="final" id="finalBox">
+      <h2 id="finalT"></h2>
+      <p class="msg-big" id="finalP"></p>
+      <button class="btn fill" type="button" id="openSite">BUKA HALAMAN LENGKAP</button>
+    </div>
+  </div></div>
+</div>
+
+<canvas id="petals" aria-hidden="true"></canvas>
+<audio id="bgm" src="backsound.mp3" loop preload="auto"></audio>
+<button class="sound-btn muted" id="soundBtn" type="button" aria-label="Nyalakan musik">
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
+</button>
 
 <header id="siteHeader">
   <div class="container">
-    <nav>
-      <a href="#top" class="logo">
-        <span class="logo-mark">🤍</span>
-        Jasa Peluk Gilang
-      </a>
-      <ul class="nav-links">
+    <nav aria-label="Navigasi utama">
+      <a href="#beranda" class="logo"><i>♥</i> Jasa Peluk Gilang</a>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#galeri">Galeri</a></li>
         <li><a href="#layanan">Layanan</a></li>
-        <li><a href="#testimoni">Testimoni</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <div class="nav-cta">
-        <a href="#layanan" class="btn btn-primary btn-sm">Jelajahi Layanan</a>
-      </div>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
     </nav>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
   <section class="hero" id="beranda">
-    <div class="hero-blob blob1"></div>
-    <div class="hero-blob blob2"></div>
-    <div class="hero-blob blob3"></div>
     <div class="container hero-inner">
       <div>
-        <span class="eyebrow"><span class="dot"></span> Sebuah Konsep, Bukan Layanan Nyata</span>
-        <h1>Terkadang, Viony<br>Hanya Butuh<br>Satu Pelukan<br>Dari Gilang. </h1>
-        <p class="lead">Jasa Peluk ini dibuat dengan hati untuk seseorang yang berarti. Dan setelah kupikir-pikir, 'seseorang' itu selalu mengarah ke kamu. Jadi, kapan kita berhenti main imajinasi dan beralih ke kenyataan?</p>
-        <div class="hero-cta">
-          <a href="#layanan" class="btn btn-primary">Jelajahi Layanan Peluk</a>
-          <a href="#tentang" class="btn btn-ghost">Baca Cerita Kami</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><b>8</b><span>Jenis Kehangatan</span></div>
-          <div class="hero-stat"><b>∞</b><span>Ketulusan</span></div>
-          <div class="hero-stat"><b>1</b><span>Alasan: Kamu</span></div>
-        </div>
+        <span class="eyebrow">SEBUAH KONSEP, BUKAN LAYANAN NYATA</span>
+        <h1>Terkadang, Viony hanya butuh <em>satu pelukan</em> dari Gilang.</h1>
+        <p class="lead">Jasa Peluk ini dibuat dengan hati untuk seseorang yang berarti. Dan setelah kupikir-pikir, “seseorang” itu selalu mengarah ke kamu. Jadi, kapan kita berhenti main imajinasi dan beralih ke kenyataan?</p>
+        <p class="hero-note">Delapan jenis kehangatan, satu alasan: kamu.</p>
       </div>
-      <div class="hero-visual">
-        <div class="glass-card hero-main-card">
-          <div class="hero-illustration">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6">
-              <path d="M12 21s-7.5-4.35-9.5-9.28C1.2 8.6 3 5.5 6.2 5.1c1.8-.22 3.4.62 4.3 2 .3.46.9.46 1.2 0 .9-1.38 2.5-2.22 4.3-2 3.2.4 5 3.5 3.7 6.62C19.5 16.65 12 21 12 21z" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Ruang Tenang untukmu</h3>
-          <p>Berhenti sejenak. Bernapas. Kamu tidak perlu kuat sepanjang waktu.</p>
-        </div>
-        <div class="floating-chip chip1">🌸 &nbsp;Dibuat dengan tulus</div>
-        <div class="floating-chip chip2">💜 &nbsp;Untuk seseorang yang istimewa</div>
-      </div>
+      <figure class="arch reveal">
+        <div class="frame"><img src="foto-1.jpg" alt="Foto utama" onerror="this.parentNode.classList.add('noimg')"></div>
+        <figcaption>Ruang tenang untukmu. Kamu tidak perlu kuat sepanjang waktu.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- HOME CONTENT -->
   <section class="intro">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-text reveal">
-          <span class="eyebrow"><span class="dot"></span> Mengapa Ini Ada</span>
-          <h2 style="font-size:32px;margin-bottom:20px;">Kadang, yang Kita Cari Bukan Solusi. Hanya Kehangatan.</h2>
-          <p>Ada hari-hari ketika kata-kata terasa terlalu berat untuk diucapkan, dan nasihat terasa terlalu jauh untuk didengar. Pada hari-hari itu, yang sering kita butuhkan sebenarnya sederhana: seseorang yang mau duduk di sisi kita, tanpa menghakimi, tanpa terburu-buru pergi.</p>
-          <p>Jasa Peluk lahir dari gagasan itu. Bukan sebagai bisnis, bukan sebagai transaksi — melainkan sebagai simbol. Simbol bahwa ada orang yang memikirkanmu cukup dalam untuk membangun sebuah "ruang" khusus, hanya agar kamu tahu: kamu tidak sendirian, dan kamu boleh merasa lelah sesekali.</p>
-          <p>Setiap bagian dari halaman ini — setiap warna, setiap kalimat — dirancang untuk satu tujuan kecil namun penting: mengingatkanmu bahwa kehangatan itu nyata, meskipun datang dalam bentuk yang tidak biasa.</p>
-        </div>
-        <div class="intro-card-stack reveal">
-          <div class="glass-card stack-card a">
-            <h4 style="color:var(--ink)">🌤️ Untuk Hari yang Berat</h4>
-            <p style="color:var(--ink-soft)">Tidak semua hari harus dihadapi sendirian.</p>
-          </div>
-          <div class="glass-card stack-card b">
-            <h4>🎉 Untuk Momen Bahagia</h4>
-            <p>Kebahagiaan terasa lebih utuh saat dibagikan.</p>
-          </div>
-          <div class="glass-card stack-card c">
-            <h4>🤍 Untuk Sekadar Hadir</h4>
-            <p>Kadang, kehadiran saja sudah cukup.</p>
-          </div>
-        </div>
+    <div class="container intro-grid">
+      <div class="reveal">
+        <span class="eyebrow">MENGAPA INI ADA</span>
+        <h2>Kadang yang kita cari bukan solusi. Hanya <em>kehangatan</em>.</h2>
+        <p>Ada hari ketika kata-kata terasa terlalu berat diucapkan dan nasihat terasa terlalu jauh didengar. Pada hari seperti itu, yang dibutuhkan sederhana: seseorang yang duduk di sisimu, tanpa menghakimi, tanpa terburu-buru pergi.</p>
+        <p>Jasa Peluk lahir dari gagasan itu. Bukan bisnis, bukan transaksi, melainkan simbol bahwa ada orang yang memikirkanmu cukup dalam untuk membangun sebuah ruang khusus, supaya kamu tahu kamu tidak sendirian.</p>
+      </div>
+      <div class="moments reveal">
+        <div class="moment"><h4>Untuk hari yang berat</h4><p>Tidak semua hari harus dihadapi sendirian.</p></div>
+        <div class="moment"><h4>Untuk momen bahagia</h4><p>Kebahagiaan terasa lebih utuh saat dibagikan.</p></div>
+        <div class="moment"><h4>Untuk sekadar hadir</h4><p>Kadang, kehadiran saja sudah cukup.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="tentang">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> Tentang Kami</span>
-        <h2>Cerita di Balik Jasa Peluk</h2>
+        <span class="eyebrow">TENTANG AKU</span>
+        <h2>Cerita di balik Jasa Peluk</h2>
       </div>
+      <figure class="wide-frame reveal"><div class="frame"><img src="foto-2.jpg" alt="Foto ceritaku" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div></figure>
       <div class="about-inner reveal">
-        <p>Semua ide besar biasanya dimulai dari hal kecil — sebuah percakapan larut malam, sebuah momen ketika seseorang terlihat kelelahan namun tetap berusaha tersenyum. Jasa Peluk pun dimulai dari momen sesederhana itu: dari kesadaran bahwa dukungan tidak selalu harus rumit untuk terasa bermakna.</p>
-        <p>Kami percaya bahwa di tengah dunia yang serba cepat, di mana setiap orang dituntut untuk terlihat kuat, tenang, dan selalu memiliki jawaban, ada satu kebutuhan yang sering terlupakan: kebutuhan untuk sekadar dipeluk, didengarkan, dan diterima apa adanya — tanpa embel-embel, tanpa penilaian, tanpa harus menjelaskan apa pun.</p>
-        <p class="pull-quote">"Tidak semua luka butuh solusi. Kadang, ia hanya butuh ditemani."</p>
-        <p>Dari pemikiran itu, lahirlah gagasan tentang sebuah "ruang" — bukan ruang fisik, melainkan ruang perasaan. Sebuah tempat di mana kehangatan dikemas menjadi bahasa yang mudah dipahami: pelukan. Bukan karena pelukan adalah jawaban dari segala masalah, tetapi karena pelukan adalah salah satu bentuk komunikasi paling jujur yang manusia miliki — bahasa yang tidak memerlukan kata-kata untuk mengatakan "aku peduli padamu."</p>
-        <p>Jasa Peluk dibangun bukan sebagai sebuah usaha, melainkan sebagai persembahan pribadi. Setiap kalimat di halaman ini ditulis dengan kesadaran penuh bahwa kehangatan sejati tidak bisa dibeli — ia hanya bisa diberikan, dengan tulus, oleh seseorang yang benar-benar peduli. Maka, biarlah situs ini menjadi representasi dari kepedulian itu: sebuah cara kreatif untuk mengatakan "aku memikirkanmu," dikemas dalam bentuk yang indah dan penuh perhatian.</p>
-        <p>Filosofi kami sederhana. Pertama, empati harus selalu mendahului solusi — sebelum mencoba memperbaiki sesuatu, seseorang perlu merasa dipahami. Kedua, kebaikan tidak memerlukan alasan besar; kebaikan kecil yang konsisten sering kali lebih berarti daripada gestur besar yang jarang dilakukan. Ketiga, koneksi antar manusia adalah kebutuhan dasar, bukan kemewahan — setiap orang, tidak peduli seberapa kuat ia terlihat dari luar, tetap membutuhkan ruang untuk menjadi rentan.</p>
-        <p>Kami juga percaya bahwa kehangatan memiliki banyak bentuk. Ia bisa berupa pelukan yang sesungguhnya, tetapi ia juga bisa berupa perhatian, waktu yang diluangkan, atau sekadar kesediaan untuk hadir di saat yang tepat. Jasa Peluk mencoba merayakan semua bentuk kehangatan itu — merangkumnya ke dalam delapan jenis "pelukan" simbolis yang masing-masing mewakili momen berbeda dalam hidup: semangat yang goyah, hari yang berat, awal yang baru, perpisahan yang menyakitkan, kebahagiaan yang ingin dibagi, keheningan yang butuh ditemani, persahabatan yang menguatkan, dan keluarga yang selalu menjadi rumah.</p>
-        <p>Pada akhirnya, Jasa Peluk bukan tentang transaksi. Ia tentang niat baik yang dikemas menjadi sesuatu yang bisa dilihat, dibaca, dan dirasakan. Ia adalah pengingat kecil — namun tulus — bahwa di dunia yang kadang terasa dingin, selalu ada seseorang yang bersedia memberikan kehangatan, tanpa syarat, tanpa harga, hanya karena kamu pantas mendapatkannya.</p>
+        <p>Semua ide besar biasanya dimulai dari hal kecil: percakapan larut malam, atau momen ketika seseorang tampak lelah namun tetap berusaha tersenyum. Jasa Peluk dimulai dari kesadaran bahwa dukungan tidak harus rumit untuk terasa bermakna.</p>
+        <p>Di dunia yang menuntut kita selalu terlihat kuat, ada satu kebutuhan yang sering terlupakan: dipeluk, didengarkan, dan diterima apa adanya, tanpa harus menjelaskan apa pun.</p>
+        <p class="pull-quote">“Tidak semua luka butuh solusi. Kadang, ia hanya butuh ditemani.”</p>
+        <p>Karena itu lahirlah sebuah ruang, bukan ruang fisik melainkan ruang perasaan, tempat kehangatan dikemas dalam bahasa yang paling jujur: pelukan. Bukan jawaban atas segala masalah, tetapi cara mengatakan “aku peduli padamu” tanpa kata.</p>
+        <p>Filosofinya sederhana. Empati mendahului solusi. Kebaikan kecil yang konsisten lebih berarti daripada gestur besar yang jarang. Dan koneksi antar manusia adalah kebutuhan dasar, bukan kemewahan.</p>
+        <p>Pada akhirnya, ini bukan tentang transaksi. Ini pengingat kecil yang tulus bahwa di dunia yang kadang terasa dingin, selalu ada seseorang yang bersedia memberikan kehangatan, tanpa syarat, hanya karena kamu pantas mendapatkannya.</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <section class="gallery" id="galeri">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">GALERI</span>
+        <h2>Potongan momen yang <em>ingin dikenang</em></h2>
+        <p>Beberapa momen yang ingin kusimpan, untukmu.</p>
+      </div>
+      <div class="gal-grid reveal">
+        <figure><div class="frame"><img src="foto-3.jpg" alt="Kenangan 1" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div></figure>
+        <figure><div class="frame"><img src="foto-4.jpg" alt="Kenangan 2" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div></figure>
+        <figure><div class="frame"><img src="foto-5.jpg" alt="Kenangan 3" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div></figure>
+        <figure><div class="frame"><img src="foto-6.jpg" alt="Kenangan 4" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div></figure>
+      </div>
+    </div>
+  </section>
+
   <section class="services" id="layanan">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> Jenis Kehangatan</span>
-        <h2>Delapan Makna di Balik Setiap Pelukan</h2>
-        <p>Setiap "layanan" di sini adalah konsep simbolis — representasi dari jenis dukungan emosional yang berbeda, bukan kontak fisik komersial.</p>
+        <span class="eyebrow">JENIS KEHANGATAN</span>
+        <h2>Delapan makna di balik setiap pelukan</h2>
+        <p>Setiap “layanan” adalah konsep simbolis tentang dukungan emosional, bukan kontak fisik komersial.</p>
       </div>
       <div class="service-grid reveal">
-
-        <div class="service-card">
-          <div class="service-icon">💪</div>
-          <h3>Peluk Semangat</h3>
-          <p>Untuk hari-hari ketika langkahmu terasa berat dan keyakinanmu mulai goyah. Peluk Semangat adalah simbol dorongan lembut yang mengatakan, "kamu lebih kuat dari yang kamu kira." Ia hadir bukan untuk menghapus rasa ragu, tetapi untuk menemani prosesnya — mengingatkanmu bahwa setiap usaha kecil yang kamu lakukan hari ini tetap berarti, meskipun hasilnya belum terlihat. Ini adalah pelukan yang berbicara tanpa suara, mengatakan bahwa seseorang mempercayaimu bahkan di saat kamu sendiri belum sepenuhnya percaya. Sebuah pengingat bahwa semangat tidak harus selalu menyala besar — kadang, ia hanya perlu dijaga agar tidak padam, sedikit demi sedikit, sampai kamu siap menyalakannya sendiri lagi. Peluk Semangat hadir untuk versi dirimu yang sedang berjuang diam-diam, yang terus mencoba meski lelah, dan yang layak diberi tahu bahwa usahanya terlihat dan dihargai.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🌧️</div>
-          <h3>Peluk Hari Berat</h3>
-          <p>Tidak semua hari bisa dijalani dengan mudah. Ada hari-hari ketika semuanya terasa terlalu banyak — pikiran yang penuh, hati yang lelah, dan energi yang seakan habis sebelum hari berakhir. Peluk Hari Berat adalah bentuk kehadiran tanpa tuntutan: tidak meminta penjelasan, tidak menuntut kekuatan, hanya menawarkan ruang untuk sejenak berhenti. Ia adalah pengingat bahwa boleh saja merasa tidak baik-baik saja, dan bahwa perasaan itu tidak perlu disembunyikan atau dijelaskan kepada siapa pun. Terkadang, hal paling menyembuhkan bukanlah nasihat, melainkan kehadiran yang tenang — seseorang yang cukup peduli untuk tetap tinggal, meski tidak banyak kata yang diucapkan. Peluk Hari Berat hadir untuk mengingatkan bahwa badai tidak berlangsung selamanya, dan bahwa kamu tidak harus menghadapinya sendirian.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🌱</div>
-          <h3>Peluk Selamat Datang</h3>
-          <p>Setiap permulaan baru sering membawa campuran rasa gugup dan harap. Peluk Selamat Datang adalah simbol sambutan hangat untuk setiap langkah baru — entah itu tempat baru, fase hidup baru, atau kesempatan yang baru saja dimulai. Ia mengatakan, "kamu diterima di sini, apa adanya." Tidak ada penilaian, tidak ada tekanan untuk langsung terlihat sempurna. Peluk ini melambangkan pintu yang terbuka lebar, tempat seseorang bisa masuk dengan tenang tanpa rasa takut ditolak. Awal yang baru bisa terasa menakutkan sendirian, tetapi terasa jauh lebih ringan ketika ada yang menyambut dengan tulus. Peluk Selamat Datang hadir untuk menemani transisi itu — mengingatkan bahwa permulaan baru bukanlah sesuatu yang harus dihadapi dengan gelisah, melainkan sesuatu yang boleh disambut dengan tenang dan penuh harapan.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🍃</div>
-          <h3>Peluk Perpisahan</h3>
-          <p>Tidak semua hal harus berakhir dengan patah. Peluk Perpisahan adalah representasi dari pelepasan yang lembut — cara untuk mengucapkan selamat tinggal tanpa harus meninggalkan luka yang dalam. Ia mengakui bahwa perpisahan itu sulit, bahwa rasa sedih dan kehilangan itu wajar, dan bahwa tidak apa-apa untuk berduka atas sesuatu yang telah berakhir. Namun di dalamnya juga tersimpan pesan bahwa berakhirnya sesuatu tidak berarti hilangnya semua makna yang pernah dibangun. Peluk ini menemani proses melepaskan dengan penuh rasa hormat terhadap apa yang pernah ada, sekaligus memberi ruang untuk melangkah maju. Kadang, yang dibutuhkan bukanlah kata-kata penghibur, melainkan seseorang yang membiarkan kita merasakan kesedihan itu sepenuhnya, sebelum akhirnya berjalan lagi.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🎉</div>
-          <h3>Peluk Bahagia</h3>
-          <p>Kebahagiaan yang dibagikan terasa dua kali lebih nyata. Peluk Bahagia adalah simbol perayaan atas pencapaian, momen indah, atau sekadar hari baik yang layak disyukuri. Ia hadir bukan hanya untuk momen-momen besar seperti kelulusan atau kesuksesan, tetapi juga untuk kebahagiaan kecil yang sering terlewat — secangkir kopi yang nikmat, cuaca yang cerah, atau berita baik yang datang tiba-tiba. Peluk ini mengatakan, "aku ikut senang untukmu," dengan tulus dan tanpa rasa iri. Merayakan kebahagiaan bersama seseorang yang benar-benar peduli membuat momen itu terasa lebih bermakna, karena kegembiraan yang dibagi cenderung tumbuh, bukan berkurang. Peluk Bahagia hadir sebagai pengingat bahwa merayakan hal-hal kecil sama pentingnya dengan merayakan hal-hal besar.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🤍</div>
-          <h3>Peluk Diam</h3>
-          <p>Tidak semua momen membutuhkan percakapan. Peluk Diam adalah bentuk kehadiran tanpa kata — sebuah pengakuan bahwa terkadang, keheningan yang ditemani terasa lebih menenangkan daripada nasihat terbaik sekalipun. Ia hadir untuk momen-momen ketika kata-kata terasa tidak cukup, atau ketika seseorang hanya ingin didengar tanpa harus menjelaskan apa pun. Peluk ini menghormati keheningan sebagai bentuk komunikasi yang sah, bukan sesuatu yang harus segera diisi atau diperbaiki. Kadang, yang paling dibutuhkan bukanlah solusi cepat, melainkan seseorang yang mau duduk dalam diam bersama kita, membiarkan perasaan itu ada tanpa terburu-buru pergi. Peluk Diam adalah pengingat bahwa kehadiran yang tenang bisa menjadi bentuk dukungan paling dalam.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🌷</div>
-          <h3>Peluk Sahabat</h3>
-          <p>Persahabatan sejati sering terlihat dari hal-hal kecil — pesan singkat di saat yang tepat, tawa yang menular, atau kehadiran yang selalu terasa aman. Peluk Sahabat adalah simbol dari ikatan itu: sebuah pengingat bahwa memiliki seseorang yang benar-benar memahami kita adalah salah satu bentuk kekayaan hidup yang paling berharga. Ia melambangkan kepercayaan yang dibangun dari waktu ke waktu, kesetiaan yang tidak bersyarat, dan kenyamanan untuk menjadi diri sendiri tanpa rasa takut dihakimi. Peluk ini merayakan persahabatan dalam segala bentuknya — yang dekat maupun yang jauh, yang lama maupun yang baru — sebagai pengingat bahwa hidup terasa lebih ringan ketika dijalani bersama orang yang tepat.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🏡</div>
-          <h3>Peluk Keluarga</h3>
-          <p>Ada kehangatan tertentu yang hanya bisa ditemukan dalam keluarga — tempat di mana kita diterima bukan karena pencapaian, tetapi karena kita adalah bagian darinya. Peluk Keluarga melambangkan rumah dalam artian yang paling dalam: bukan sekadar bangunan, melainkan rasa aman yang tumbuh dari kasih sayang dan penerimaan. Ia mengingatkan bahwa di tengah kesibukan dan jarak yang kadang tercipta, ikatan keluarga tetap menjadi fondasi yang menopang. Peluk ini merayakan setiap bentuk keluarga — yang terikat darah maupun yang terbentuk dari pilihan — sebagai pengingat bahwa selalu ada tempat untuk kembali, dan selalu ada orang yang menunggu dengan pelukan hangat.</p>
-        </div>
-
+        <div class="service-card"><h3><span>💞</span>Peluk Kasih Sayang</h3><p>Pelukan paling hangat dari hati yang sedang jatuh cinta. Ia berkata, “kamu rumahku,” tanpa perlu banyak kata. Tentang rindu yang sabar menunggu, genggaman yang membuat tenang, dan rasa aman menjadi dirimu sendiri di samping seseorang yang memilihmu setiap hari.</p></div>
+        <div class="service-card"><h3><span>🌧️</span>Peluk Hari Berat</h3><p>Kehadiran tanpa tuntutan. Tidak meminta penjelasan, tidak menuntut kekuatan, hanya ruang untuk berhenti sejenak. Boleh tidak baik-baik saja, dan badai tidak berlangsung selamanya.</p></div>
+        <div class="service-card"><h3><span>🌱</span>Peluk Selamat Datang</h3><p>Sambutan hangat untuk setiap langkah baru. Kamu diterima di sini, apa adanya, tanpa tekanan untuk langsung terlihat sempurna. Awal yang baru terasa ringan saat ada yang menyambut dengan tulus.</p></div>
+        <div class="service-card"><h3><span>🍃</span>Peluk Perpisahan</h3><p>Pelepasan yang lembut. Sedih itu wajar, dan berakhirnya sesuatu tidak menghapus makna yang pernah dibangun. Ia menemani kamu melepaskan, lalu melangkah lagi.</p></div>
+        <div class="service-card"><h3><span>🎉</span>Peluk Bahagia</h3><p>Perayaan untuk pencapaian besar maupun kebahagiaan kecil yang sering terlewat. “Aku ikut senang untukmu,” tanpa rasa iri. Kegembiraan yang dibagi justru tumbuh.</p></div>
+        <div class="service-card"><h3><span>🤍</span>Peluk Diam</h3><p>Kehadiran tanpa kata. Untuk saat ketika kata-kata tidak cukup, dan seseorang hanya ingin ditemani dalam hening tanpa harus menjelaskan apa pun.</p></div>
+        <div class="service-card"><h3><span>💪</span>Peluk Semangat</h3><p>Untuk hari ketika langkahmu berat dan keyakinanmu goyah. Dorongan lembut yang berkata, “kamu lebih kuat dari yang kamu kira.” Setiap usaha kecilmu hari ini tetap berarti, dan seseorang mempercayaimu bahkan saat kamu belum.</p></div>
+        <div class="service-card"><h3><span>🏡</span>Peluk Keluarga</h3><p>Rumah dalam arti terdalam: diterima bukan karena pencapaian, melainkan karena kamu bagian darinya. Selalu ada tempat untuk kembali, dan seseorang yang menunggu dengan pelukan hangat.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
   <section class="why">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> Mengapa Kami</span>
-        <h2>Nilai yang Kami Pegang</h2>
-        <p>Bukan tentang seberapa besar, tetapi tentang seberapa tulus.</p>
+        <span class="eyebrow">MENGAPA AKU</span>
+        <h2>Nilai yang aku pegang</h2>
+        <p>Bukan tentang seberapa besar, tetapi seberapa tulus.</p>
       </div>
       <div class="why-grid reveal">
-        <div class="why-card">
-          <div class="why-icon">🤝</div>
-          <h4>Kepercayaan</h4>
-          <p>Setiap kehangatan dibangun di atas rasa percaya yang tidak main-main.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🕊️</div>
-          <h4>Kenyamanan</h4>
-          <p>Ruang yang aman, tanpa tekanan untuk terlihat sempurna.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🛡️</div>
-          <h4>Keamanan</h4>
-          <p>Rasa aman datang lebih dulu, sebelum apa pun yang lain.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🙏</div>
-          <h4>Rasa Hormat</h4>
-          <p>Setiap perasaan dihargai, tidak pernah diremehkan.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">💗</div>
-          <h4>Empati</h4>
-          <p>Memahami dulu, sebelum mencoba memperbaiki.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🌼</div>
-          <h4>Kebaikan</h4>
-          <p>Kebaikan kecil yang konsisten, lebih berarti dari gestur besar sesekali.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🔗</div>
-          <h4>Koneksi</h4>
-          <p>Karena manusia tidak dirancang untuk menghadapi semuanya sendirian.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">✨</div>
-          <h4>Ketulusan</h4>
-          <p>Semua yang ditawarkan di sini datang dari niat yang tulus.</p>
-        </div>
+        <div class="why-card"><div class="ic">🤝</div><h4>Kepercayaan</h4><p>Dibangun di atas rasa percaya yang tidak main-main.</p></div>
+        <div class="why-card"><div class="ic">🕊️</div><h4>Kenyamanan</h4><p>Ruang aman tanpa tekanan untuk terlihat sempurna.</p></div>
+        <div class="why-card"><div class="ic">🛡️</div><h4>Keamanan</h4><p>Rasa aman datang lebih dulu dari apa pun.</p></div>
+        <div class="why-card"><div class="ic">🙏</div><h4>Rasa Hormat</h4><p>Setiap perasaan dihargai, tidak diremehkan.</p></div>
+        <div class="why-card"><div class="ic">💗</div><h4>Empati</h4><p>Memahami dulu, sebelum mencoba memperbaiki.</p></div>
+        <div class="why-card"><div class="ic">🌼</div><h4>Kebaikan</h4><p>Kebaikan kecil yang konsisten lebih berarti.</p></div>
+        <div class="why-card"><div class="ic">🔗</div><h4>Koneksi</h4><p>Manusia tidak dirancang menghadapi semuanya sendirian.</p></div>
+        <div class="why-card"><div class="ic">✨</div><h4>Ketulusan</h4><p>Semuanya datang dari niat yang tulus.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testi" id="testimoni">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> Cerita Mereka</span>
-        <h2>Kata Mereka Tentang Kehangatan Ini</h2>
-        <p>Kisah-kisah ini bersifat fiktif, ditulis untuk menggambarkan nuansa emosional dari setiap konsep pelukan.</p>
-      </div>
-      <div class="testi-grid reveal">
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="quote">Membaca setiap bagiannya rasanya seperti dipeluk sungguhan. Sederhana, tapi menyentuh dengan cara yang tidak terduga.</p>
-          <div class="testi-person">
-            <div class="testi-avatar">A</div>
-            <div><b>Aya</b><span>Menerima Peluk Hari Berat</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="quote">Aku tidak menyangka sebuah halaman web bisa membuatku menangis pelan sambil tersenyum. Ini terasa sangat personal.</p>
-          <div class="testi-person">
-            <div class="testi-avatar">R</div>
-            <div><b>Rani</b><span>Menerima Peluk Sahabat</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="quote">Kata-katanya terasa seperti ditulis khusus untuk hatiku yang lelah. Terima kasih sudah mengingatkanku untuk beristirahat.</p>
-          <div class="testi-person">
-            <div class="testi-avatar">D</div>
-            <div><b>Dinda</b><span>Menerima Peluk Semangat</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="quote">Bagian "Peluk Diam" benar-benar menggambarkan apa yang aku rasakan tapi tidak pernah bisa aku ucapkan.</p>
-          <div class="testi-person">
-            <div class="testi-avatar">S</div>
-            <div><b>Sinta</b><span>Menerima Peluk Diam</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="quote">Ide sederhana yang dieksekusi dengan sangat indah. Setiap detailnya terasa penuh perhatian.</p>
-          <div class="testi-person">
-            <div class="testi-avatar">M</div>
-            <div><b>Maya</b><span>Menerima Peluk Bahagia</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="quote">Rasanya hangat, tenang, dan sangat personal. Terima kasih untuk kebaikan yang dituangkan di sini.</p>
-          <div class="testi-person">
-            <div class="testi-avatar">L</div>
-            <div><b>Lala</b><span>Menerima Peluk Keluarga</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section style="padding-top:0;">
+  <div class="cta">
     <div class="cta-banner reveal">
-      <h2>Karena Kamu Pantas Merasa Hangat</h2>
+      <h2>Karena kamu pantas merasa <em>hangat</em></h2>
       <p>Halaman ini dibuat dengan penuh perhatian, sebagai pengingat kecil bahwa kamu selalu berarti dan tidak sendirian.</p>
-      <a href="#tentang" class="btn btn-ghost">Baca Lagi Cerita Kami</a>
+      <a href="#tentang" class="btn fill">BACA LAGI CERITAKU</a>
     </div>
-  </section>
+  </div>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
+  <section class="faq" id="faq" style="padding-bottom:0">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> Pertanyaan Umum</span>
-        <h2>Yang Sering Ditanyakan</h2>
+        <span class="eyebrow">PERTANYAAN UMUM</span>
+        <h2>Yang sering ditanyakan</h2>
       </div>
       <div class="faq-list reveal" id="faqList"></div>
     </div>
@@ -811,102 +477,264 @@
 
 <footer>
   <div class="container">
-    <div class="footer-disclaimer">
-      <b>Catatan penting:</b> Jasa Peluk adalah karya kreatif dan personal, dibuat sebagai konsep simbolis tentang kehangatan dan koneksi manusia. Ini bukan bisnis nyata, bukan layanan yang bisa dipesan, bukan layanan kencan, dan tidak melibatkan kontak fisik komersial dalam bentuk apa pun. Seluruh konten — termasuk layanan, testimoni, dan cerita — adalah fiksi yang ditulis untuk tujuan emosional dan artistik semata.
-    </div>
+    <div class="disclaimer"><b>Catatan dari hati:</b> Jasa Peluk bukan bisnis dan tidak bisa dipesan. Ia hanya karya kecil yang kubuat sendiri, tanpa harga dan tanpa transaksi, untuk satu orang saja: kamu. Setiap pelukan di sini adalah caraku mengatakan hal-hal yang kadang sulit diucapkan, bahwa aku memikirkanmu, menyayangimu, dan ingin selalu hadir untukmu.</div>
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo">🤍 Jasa Peluk Gilang</div>
-        <p style="font-size:14px;max-width:280px;">Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.</p>
-      </div>
-      <div>
-        <h5>Jelajahi</h5>
-        <ul>
-          <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#layanan">Layanan</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Lainnya</h5>
-        <ul>
-          <li><a href="#testimoni">Testimoni</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Tentang Karya Ini</h5>
-        <ul>
-          <li>Konsep Fiksi</li>
-          <li>Non-Komersial</li>
-          <li>Dibuat dengan Hati</li>
-        </ul>
-      </div>
+      <div><div class="footer-logo">♥ Jasa Peluk Gilang</div><p style="font-size:14.5px;max-width:300px">Karena terkadang, satu pelukan terasa lebih berarti daripada seribu kata.</p></div>
+      <div><h5>JELAJAHI</h5><ul><li><a href="#beranda">Beranda</a></li><li><a href="#tentang">Tentang</a></li><li><a href="#galeri">Galeri</a></li><li><a href="#layanan">Layanan</a></li></ul></div>
+      <div><h5>LAINNYA</h5><ul><li><a href="#faq">FAQ</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Jasa Peluk — Sebuah Konsep Kreatif Personal.</span>
-      <span>Dibuat dengan ❤️ untuk seseorang yang istimewa.</span>
-    </div>
+    <div class="footer-bottom"><span>© 2026 Jasa Peluk — Konsep Kreatif Personal.</span><span>Dibuat dengan ❤️ untuk seseorang yang istimewa.</span></div>
   </div>
 </footer>
 
 <script>
-  // Header scroll state
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
-  reveals.forEach(el => io.observe(el));
-
-  // FAQ data
-  const faqData = [
-    ["Apa itu Jasa Peluk?", "Jasa Peluk adalah sebuah konsep kreatif dan personal yang dirancang untuk menyampaikan pesan kehangatan, empati, dan koneksi manusia melalui bentuk visual sebuah situs web. Ini bukan bisnis nyata."],
-    ["Apakah ini layanan yang bisa dipesan sungguhan?", "Tidak. Jasa Peluk tidak menyediakan layanan fisik apa pun yang bisa dipesan atau dibayar. Seluruh konten bersifat simbolis dan fiksi, dibuat sebagai karya emosional untuk satu orang tertentu."],
-    ["Apakah ini semacam layanan kencan atau escort?", "Sama sekali bukan. Jasa Peluk tidak berkaitan dengan layanan kencan, escort, atau kontak fisik komersial dalam bentuk apa pun. Konsep ini murni tentang kehangatan emosional secara simbolis."],
-    ["Lalu, untuk apa situs ini dibuat?", "Situs ini dibuat sebagai hadiah kreatif dan personal — sebuah cara unik untuk menyampaikan perhatian, kepedulian, dan kehangatan kepada seseorang yang berarti, melalui format yang indah dan bermakna."],
-    ["Apa arti dari delapan jenis 'peluk' yang disebutkan?", "Kedelapannya adalah representasi simbolis dari berbagai momen emosional dalam hidup — seperti semangat yang goyah, hari yang berat, awal baru, perpisahan, kebahagiaan, keheningan, persahabatan, dan keluarga."],
-    ["Apakah testimoni di halaman ini nyata?", "Tidak, seluruh testimoni bersifat fiktif dan ditulis untuk menggambarkan nuansa emosional dari setiap konsep, bukan pengalaman nyata dari pengguna sungguhan."],
-    ["Mengapa memilih tema 'pelukan' untuk konsep ini?", "Pelukan dipilih karena ia adalah salah satu bentuk komunikasi paling universal dan jujur — cara menyampaikan kepedulian tanpa perlu kata-kata."],
-    ["Apakah situs ini dimaksudkan untuk publik?", "Tidak. Situs ini dibuat secara khusus dan personal, bukan untuk dirilis atau dipromosikan secara komersial kepada masyarakat umum."],
-    ["Apakah ada transaksi uang yang terlibat?", "Tidak ada. Tidak ada sistem pembayaran, pemesanan, atau transaksi apa pun dalam konsep ini. Semuanya bersifat simbolis dan gratis secara konsep."],
-    ["Bagaimana filosofi di balik Jasa Peluk?", "Filosofinya sederhana: empati mendahului solusi, kebaikan kecil itu penting, dan koneksi manusia adalah kebutuhan dasar, bukan kemewahan."],
-    ["Apakah setiap 'layanan' memiliki makna berbeda?", "Ya, setiap jenis pelukan mewakili momen emosional yang berbeda, dari dukungan semangat hingga kehangatan keluarga, masing-masing dengan nuansa tersendiri."],
-    ["Siapa yang bisa menikmati konsep ini?", "Konsep ini dibuat untuk satu orang tertentu sebagai bentuk perhatian personal, meskipun pesan di dalamnya bersifat universal dan bisa dirasakan siapa saja."],
-    ["Apakah desain situs ini terinspirasi dari sesuatu?", "Desainnya terinspirasi dari estetika modern yang lembut dan hangat — memadukan glassmorphism, warna pastel, dan tipografi yang elegan untuk menciptakan suasana yang menenangkan."],
-    ["Apakah saya bisa menggunakan konsep serupa untuk orang lain?", "Konsep ini dibuat secara personal untuk momen dan orang tertentu. Idenya bisa menginspirasi, namun setiap penerapannya sebaiknya tetap dijaga dalam konteks personal, bukan komersial."],
-    ["Apa pesan utama yang ingin disampaikan situs ini?", "Pesan utamanya adalah bahwa kehangatan dan perhatian kecil bisa berarti sangat besar bagi seseorang, terutama di saat-saat sulit."],
-    ["Apakah ada unsur romantis dalam konsep ini?", "Konsep ini berfokus pada kehangatan, empati, dan dukungan emosional secara umum — bukan dirancang sebagai konten romantis atau dewasa."],
-    ["Bagaimana cara terbaik menikmati situs ini?", "Cara terbaik adalah membacanya dengan tenang, dari atas ke bawah, dan membiarkan setiap kata meresap sebagai pengingat lembut bahwa kehangatan itu nyata."],
-    ["Apakah situs ini bisa diadaptasi untuk momen lain?", "Karena bersifat personal dan simbolis, konsep ini paling bermakna ketika dijaga dalam konteks aslinya — sebagai hadiah emosional yang tulus untuk satu momen tertentu."],
-    ["Kenapa disebut 'premium concept' dalam pembuatannya?", "Istilah tersebut merujuk pada kualitas desain dan kedalaman kontennya, bukan pada nilai komersial — menandakan bahwa perhatian dan usaha besar dicurahkan untuk membuatnya terasa istimewa."],
-    ["Apa yang membuat Jasa Peluk berbeda dari situs lain?", "Yang membuatnya berbeda adalah niatnya: dibuat bukan untuk menjual sesuatu, melainkan untuk memberi — sebuah karya yang lahir murni dari ketulusan dan perhatian personal."]
-  ];
-
-  const faqList = document.getElementById('faqList');
-  faqData.forEach((item, i) => {
-    const div = document.createElement('div');
-    div.className = 'faq-item';
-    div.innerHTML = `
-      <div class="faq-q">
-        <span>${item[0]}</span>
-        <span class="icon">+</span>
-      </div>
-      <div class="faq-a"><div class="faq-a-inner">${item[1]}</div></div>
-    `;
-    div.addEventListener('click', () => {
-      const isOpen = div.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
-      if (!isOpen) div.classList.add('open');
-    });
-    faqList.appendChild(div);
-  });
+/* ===== PENGATURAN — ubah isi di sini sesukamu ===== */
+window.CONFIG={
+  password:'0000',
+  hint:'Petunjuk: kodenya 0000.',
+  welcome:'Selamat datang, Viony.',
+  letter:[
+    'Hai, Viony.',
+    'Aku membuat ruang kecil ini bukan untuk dijual, bukan untuk dipamerkan.',
+    'Hanya untuk satu orang: kamu.',
+    'Ada beberapa langkah di depan. Pelan-pelan saja ya.'
+  ],
+  hugs:{
+    'Kasih Sayang':['💞','Kamu adalah tempat paling tenang yang kutemukan. Aku sayang kamu, hari ini dan di hari-hari berikutnya.'],
+    'Hari Berat':['🌧️','Boleh tidak baik-baik saja. Istirahatlah sebentar, aku di sini.'],
+    'Selamat Datang':['🌱','Kamu diterima apa adanya. Tidak perlu terlihat sempurna.'],
+    'Perpisahan':['🍃','Sedih itu wajar. Tidak ada yang buru-buru, kita lewati pelan-pelan.'],
+    'Bahagia':['🎉','Aku ikut senang untukmu, dan senang bisa menjadi bagian dari harimu.'],
+    'Diam':['🤍','Tidak perlu kata-kata. Cukup ditemani dalam hening.'],
+    'Semangat':['💪','Kamu lebih kuat dari yang kamu kira. Usahamu hari ini terlihat dan berarti.'],
+    'Keluarga':['🏡','Selalu ada tempat untuk kembali, dan seseorang yang menunggu dengan hangat.']
+  },
+  captions:['Satu momen yang ingin kuingat.','Tawa yang membuat harinya ringan.','Hari biasa yang terasa istimewa.','Dan masih banyak yang belum sempat difoto.'],
+  mainTitle:'Untukmu, Viony',
+  mainText:'Terima kasih sudah menjadi alasan di balik halaman ini. Kamu tidak harus kuat sepanjang waktu, dan kamu tidak sendirian.',
+  askQ:'Jadi, kapan kita berhenti main imajinasi dan beralih ke kenyataan?',
+  finalTitle:'Terima kasih ♥',
+  finalText:'Ucapan ini selesai, tapi pelukannya belum. Sampai ketemu.'
+};
 </script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* header + menu mobile */
+  var header=$('siteHeader'),menuBtn=$('menuBtn'),navLinks=$('navLinks');
+  addEventListener('scroll',function(){header.classList.toggle('scrolled',scrollY>20)},{passive:true});
+  function setMenu(o){navLinks.classList.toggle('open',o);menuBtn.setAttribute('aria-expanded',o);menuBtn.setAttribute('aria-label',o?'Tutup menu':'Buka menu')}
+  menuBtn.addEventListener('click',function(){setMenu(!navLinks.classList.contains('open'))});
+  navLinks.addEventListener('click',function(e){if(e.target.tagName==='A')setMenu(false)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  /* reveal (aman untuk layar kecil: threshold 0, unobserve setelah tampil) */
+  var rv=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  }else rv.forEach(function(el){el.classList.add('visible')});
+
+  /* musik */
+  var bgm=$('bgm'),btn=$('soundBtn'),fadeT,TARGET=.55;
+  function setUI(on){btn.classList.toggle('muted',!on);btn.setAttribute('aria-label',on?'Matikan musik':'Nyalakan musik')}
+  function fadeIn(){
+    clearInterval(fadeT);bgm.volume=0;
+    fadeT=setInterval(function(){if(bgm.volume<TARGET-.03)bgm.volume=Math.min(TARGET,bgm.volume+.03);else{bgm.volume=TARGET;clearInterval(fadeT)}},120);
+  }
+  function play(){
+    var p=bgm.play();
+    if(p&&p.then){p.then(function(){setUI(true);fadeIn()}).catch(function(){setUI(false)})}else{setUI(true);fadeIn()}
+  }
+  function pause(){clearInterval(fadeT);bgm.pause();setUI(false)}
+  btn.addEventListener('click',function(){bgm.paused?play():pause()});
+  var wasPlaying=false;
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){wasPlaying=!bgm.paused;if(wasPlaying)bgm.pause()}
+    else if(wasPlaying&&!$('gate').classList.contains('hide')===false){bgm.play().catch(function(){})}
+  });
+
+  /* gerbang pembuka */
+  function enter(withSound){
+    $('gate').classList.add('hide');
+    if(withSound)play();
+    startFlow();
+    setTimeout(function(){$('gate').style.display='none'},1300);
+  }
+  $('enterSound').addEventListener('click',function(){enter(true)});
+  $('enterMute').addEventListener('click',function(){enter(false)});
+
+  /* kelopak mawar jatuh */
+  var cv=$('petals'),cx=cv.getContext('2d'),W,H,P=[],raf;
+  function size(){var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:-20,r:5+Math.random()*7,s:.35+Math.random()*.7,sw:Math.random()*Math.PI*2,sp:.006+Math.random()*.01,rot:Math.random()*6.28,rs:(Math.random()-.5)*.02,c:Math.random()<.3?'216,185,138':'226,137,159',a:.25+Math.random()*.35}}
+  function init(){size();var n=W<600?16:30;P=[];for(var i=0;i<n;i++)P.push(mk(true))}
+  function draw(){
+    cx.clearRect(0,0,W,H);
+    P.forEach(function(p,i){
+      p.y+=p.s;p.sw+=p.sp;p.x+=Math.sin(p.sw)*.6;p.rot+=p.rs;
+      if(p.y>H+20)P[i]=mk(false);
+      cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle='rgba('+p.c+','+p.a+')';
+      cx.beginPath();cx.ellipse(0,0,p.r,p.r*.55,0,0,6.283);cx.fill();cx.restore();
+    });
+    raf=requestAnimationFrame(draw);
+  }
+  init();
+  if(!reduce){
+    draw();
+    document.addEventListener('visibilitychange',function(){if(document.hidden)cancelAnimationFrame(raf);else draw()});
+  }
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,200)});
+
+  /* ===== alur ucapan ===== */
+  var CF=window.CONFIG,flow=$('flow'),cur=-1,LAST=5,stages=[];
+  for(var i=0;i<=LAST;i++)stages.push($('st'+i));
+  var dots=$('flowDots');
+  for(var d=1;d<=LAST;d++)dots.appendChild(document.createElement('i'));
+  function hearts(n){
+    for(var i=0;i<n;i++)(function(i){setTimeout(function(){
+      var h=document.createElement('span');h.className='heart-fly';h.textContent=Math.random()<.7?'♥':'❀';
+      h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*22)+'px';
+      h.style.setProperty('--dx',(Math.random()*120-60)+'px');h.style.animationDuration=(2.6+Math.random()*1.8)+'s';
+      document.body.appendChild(h);setTimeout(function(){h.remove()},4600);
+    },i*(reduce?0:110))})(i);
+  }
+  function go(n){
+    if(n===cur||n<0||n>LAST)return;
+    var prev=stages[cur];
+    if(prev){prev.classList.remove('active');prev.classList.add('out');setTimeout(function(){prev.classList.remove('out')},700)}
+    cur=n;var st=stages[n];st.scrollTop=0;
+    setTimeout(function(){st.classList.add('active');enterStage(n)},prev?350:0);
+    $('flowBack').classList.toggle('show',n>=2);
+    dots.classList.toggle('show',n>=1);
+    [].forEach.call(dots.children,function(el,k){el.className=(k+1===n)?'on':(k+1<n?'done':'')});
+  }
+  function enterStage(n){
+    if(n===1)typeLetter();
+    if(n===3)carInit();
+    if(n===4){$('mainTitle').textContent=CF.mainTitle;$('mainText').textContent=CF.mainText;hearts(18)}
+    if(n===5){$('askQ').textContent=CF.askQ}
+  }
+  function startFlow(){
+    document.body.classList.add('inflow');
+    $('lockHint').textContent=CF.hint;go(0);
+  }
+  [].forEach.call(document.querySelectorAll('[data-next]'),function(b){b.addEventListener('click',function(){go(cur+1)})});
+  $('flowBack').addEventListener('click',function(){go(Math.max(1,cur-1))});
+
+  /* 0: kunci */
+  var pin='',pd=$('pinDots').children,kp=$('keypad'),lm=$('lockMsg'),busy=false;
+  ['1','2','3','4','5','6','7','8','9','','0','⌫'].forEach(function(k){
+    var b=document.createElement('button');b.type='button';b.className='key'+(k===''?' blank':'');b.textContent=k;
+    if(k==='')b.disabled=true;else b.setAttribute('aria-label',k==='⌫'?'Hapus':'Angka '+k);
+    b.addEventListener('click',function(){press(k)});kp.appendChild(b);
+  });
+  addEventListener('keydown',function(e){
+    if(cur!==0)return;
+    if(/^[0-9]$/.test(e.key))press(e.key);else if(e.key==='Backspace')press('⌫');
+  });
+  function paint(){for(var i=0;i<4;i++)pd[i].classList.toggle('f',i<pin.length)}
+  function press(k){
+    if(busy)return;
+    if(k==='⌫'){pin=pin.slice(0,-1);paint();lm.textContent='';return}
+    if(pin.length>=CF.password.length)return;
+    pin+=k;paint();
+    if(pin.length===CF.password.length){
+      if(pin===CF.password){busy=true;lm.className='lock-msg ok';lm.textContent=CF.welcome;hearts(10);setTimeout(function(){go(1);busy=false},1400)}
+      else{busy=true;lm.className='lock-msg';lm.textContent='Kodenya belum tepat. Coba lagi ya.';var pe=$('pinDots');pe.classList.add('shake');
+        setTimeout(function(){pe.classList.remove('shake');pin='';paint();busy=false},500)}
+    }
+  }
+
+  /* 1: surat */
+  var typed=false;
+  function typeLetter(){
+    var box=$('typeBox'),n1=$('n1'),txt=CF.letter.join('\n\n');
+    if(typed){return}
+    typed=true;box.style.whiteSpace='pre-line';
+    if(reduce){box.textContent=txt;n1.disabled=false;return}
+    box.classList.add('caret');var i=0;
+    (function t(){box.textContent=txt.slice(0,++i);if(i<txt.length)setTimeout(t,i>1&&txt[i-1]==='\n'?420:34);else{box.classList.remove('caret');n1.disabled=false}})();
+  }
+
+  /* 2: pilih pelukan */
+  var hg=$('hugGrid');
+  Object.keys(CF.hugs).forEach(function(name){
+    var b=document.createElement('button');b.type='button';b.className='hug';
+    b.innerHTML='<span>'+CF.hugs[name][0]+'</span>Peluk '+name;
+    b.addEventListener('click',function(){
+      [].forEach.call(hg.children,function(x){x.classList.remove('sel')});b.classList.add('sel');
+      $('hugMsg').textContent=CF.hugs[name][1];$('n2').disabled=false;hearts(6);
+    });hg.appendChild(b);
+  });
+
+  /* 3: kenangan */
+  var car=$('car'),cd=$('carDots'),cInit=false,slides=[];
+  function carInit(){
+    if(cInit)return;cInit=true;
+    CF.captions.forEach(function(c,i){
+      var f=document.createElement('div');f.className='slide';
+      f.innerHTML='<div class="frame"><img src="foto-'+(i+3)+'.jpg" alt="Kenangan '+(i+1)+'" onerror="this.parentNode.classList.add(\'noimg\')"></div>';
+      car.appendChild(f);slides.push(f);cd.appendChild(document.createElement('i'));
+    });upd();
+  }
+  function idx(){var w=slides[0].offsetWidth+16;return Math.max(0,Math.min(slides.length-1,Math.round(car.scrollLeft/w)))}
+  function upd(){var i=idx();$('carCap').textContent=CF.captions[i];[].forEach.call(cd.children,function(e,k){e.classList.toggle('on',k===i)})}
+  car.addEventListener('scroll',function(){clearTimeout(car._t);car._t=setTimeout(upd,60)},{passive:true});
+  function slide(d){slides[Math.max(0,Math.min(slides.length-1,idx()+d))].scrollIntoView({behavior:reduce?'auto':'smooth',inline:'center',block:'nearest'})}
+  $('carPrev').addEventListener('click',function(){slide(-1)});
+  $('carNext').addEventListener('click',function(){slide(1)});
+
+  /* 5: penutup */
+  var noBtn=$('noBtn'),dodge=0;
+  function dodgeMove(e){
+    if(dodge>=3)return;
+    if(e&&e.cancelable&&e.type==='touchstart')e.preventDefault();
+    dodge++;
+    var x=(Math.random()*160-80),y=(Math.random()*60-10);
+    noBtn.style.transform='translate('+x+'px,'+y+'px)';noBtn.style.transition='transform .25s';
+    if(dodge>=3){noBtn.style.transform='none';noBtn.textContent='BAIKLAH, IYA'}
+  }
+  noBtn.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')dodgeMove(e)});
+  noBtn.addEventListener('touchstart',dodgeMove,{passive:false});
+  function yes(){
+    $('askBox').style.display='none';
+    $('finalT').textContent=CF.finalTitle;$('finalP').textContent=CF.finalText;
+    $('finalBox').classList.add('show');hearts(40);
+  }
+  $('yesBtn').addEventListener('click',yes);
+  noBtn.addEventListener('click',function(){if(dodge>=3)yes()});
+  $('openSite').addEventListener('click',function(){
+    flow.classList.add('hide');document.body.classList.remove('locked','inflow');scrollTo(0,0);
+    setTimeout(function(){flow.style.display='none'},1200);
+  });
+
+  /* FAQ */
+  var faq=[
+    ["Apa itu Jasa Peluk?","Karya kreatif dan personal yang menyampaikan kehangatan, empati, dan koneksi manusia lewat sebuah situs web. Ini bukan bisnis nyata."],
+    ["Apakah ini layanan yang bisa dipesan?","Tidak. Tidak ada layanan fisik, pemesanan, atau pembayaran. Semuanya simbolis dan dibuat sebagai karya emosional untuk satu orang."],
+    ["Apakah ini layanan kencan atau escort?","Sama sekali bukan. Konsep ini murni tentang kehangatan emosional secara simbolis, tanpa kontak fisik komersial."],
+    ["Untuk apa situs ini dibuat?","Sebagai hadiah kreatif untuk menyampaikan perhatian dan kepedulian kepada seseorang yang berarti."],
+    ["Apa arti delapan jenis peluk?","Representasi momen emosional dalam hidup: semangat, hari berat, awal baru, perpisahan, kebahagiaan, keheningan, kasih sayang, dan keluarga."],
+    ["Mengapa memilih tema pelukan?","Karena pelukan adalah salah satu cara paling jujur dan universal untuk menyampaikan kepedulian tanpa kata."],
+    ["Apakah ada transaksi uang?","Tidak ada. Tidak ada sistem pembayaran atau pemesanan sama sekali."],
+    ["Apa filosofi di baliknya?","Empati mendahului solusi, kebaikan kecil itu penting, dan koneksi manusia adalah kebutuhan dasar, bukan kemewahan."],
+    ["Bagaimana cara terbaik menikmati situs ini?","Baca dengan tenang dari atas ke bawah, nyalakan musiknya, dan biarkan setiap kata meresap."]
+  ];
+  var fl=$('faqList');
+  faq.forEach(function(it,i){
+    var d=document.createElement('div');d.className='faq-item';
+    d.innerHTML='<button class="faq-q" type="button" aria-expanded="false" aria-controls="fa'+i+'"><span>'+it[0]+'</span><span class="plus" aria-hidden="true">+</span></button><div class="faq-a" id="fa'+i+'"><p>'+it[1]+'</p></div>';
+    d.querySelector('button').addEventListener('click',function(){
+      var open=d.classList.contains('open');
+      fl.querySelectorAll('.faq-item').forEach(function(f){f.classList.remove('open');f.querySelector('button').setAttribute('aria-expanded','false')});
+      if(!open){d.classList.add('open');this.setAttribute('aria-expanded','true')}
+    });
+    fl.appendChild(d);
+  });
+})();
+</script>
 </body>
 </html>
