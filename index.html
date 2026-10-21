@@ -353,7 +353,7 @@ body.inflow #petals{z-index:901}
   <section class="hero" id="beranda">
     <div class="container hero-inner">
       <div>
-        <span class="eyebrow">SEBUAH KONSEP, BUKAN LAYANAN NYATA</span>
+        <span class="eyebrow">SEBUAH KONSEP YANG AKU BUAT HANYA UNTUK KAMU</span>
         <h1>Terkadang, Viony hanya butuh <em>satu pelukan</em> dari Gilang.</h1>
         <p class="lead">Jasa Peluk ini dibuat dengan hati untuk seseorang yang berarti. Dan setelah kupikir-pikir, “seseorang” itu selalu mengarah ke kamu. Jadi, kapan kita berhenti main imajinasi dan beralih ke kenyataan?</p>
         <p class="hero-note">Delapan jenis kehangatan, satu alasan: kamu.</p>
@@ -566,27 +566,63 @@ window.CONFIG={
   $('enterSound').addEventListener('click',function(){enter(true)});
   $('enterMute').addEventListener('click',function(){enter(false)});
 
-  /* kelopak mawar jatuh */
-  var cv=$('petals'),cx=cv.getContext('2d'),W,H,P=[],raf;
-  function size(){var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
-  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:-20,r:5+Math.random()*7,s:.35+Math.random()*.7,sw:Math.random()*Math.PI*2,sp:.006+Math.random()*.01,rot:Math.random()*6.28,rs:(Math.random()-.5)*.02,c:Math.random()<.3?'216,185,138':'226,137,159',a:.25+Math.random()*.35}}
-  function init(){size();var n=W<600?16:30;P=[];for(var i=0;i<n;i++)P.push(mk(true))}
-  function draw(){
-    cx.clearRect(0,0,W,H);
-    P.forEach(function(p,i){
-      p.y+=p.s;p.sw+=p.sp;p.x+=Math.sin(p.sw)*.6;p.rot+=p.rs;
-      if(p.y>H+20)P[i]=mk(false);
-      cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle='rgba('+p.c+','+p.a+')';
-      cx.beginPath();cx.ellipse(0,0,p.r,p.r*.55,0,0,6.283);cx.fill();cx.restore();
-    });
-    raf=requestAnimationFrame(draw);
+  /* kelopak bunga jatuh — gerak berbasis waktu agar mulus di semua perangkat */
+  var cv=$('petals'),cx=cv.getContext('2d'),W=0,H=0,dpr=1,P=[],raf=0,last=0,T=0,SP=[];
+  function petal(c1,c2,c3){
+    var c=document.createElement('canvas');c.width=128;c.height=128;var g=c.getContext('2d');
+    var path=function(){g.beginPath();g.moveTo(64,122);
+      g.bezierCurveTo(30,108,4,84,6,54);g.bezierCurveTo(7,38,16,26,28,22);
+      g.quadraticCurveTo(34,8,46,16);g.quadraticCurveTo(54,20,64,22);
+      g.quadraticCurveTo(74,20,82,16);g.quadraticCurveTo(94,8,100,22);
+      g.bezierCurveTo(112,26,121,38,122,54);g.bezierCurveTo(124,84,98,108,64,122);g.closePath()};
+    var gr=g.createRadialGradient(64,110,4,64,62,72);
+    gr.addColorStop(0,c3);gr.addColorStop(.5,c2);gr.addColorStop(1,c1);
+    path();g.fillStyle=gr;g.fill();
+    g.save();path();g.clip();
+    g.strokeStyle='rgba(176,64,98,.13)';g.lineWidth=1.6;
+    [-34,-17,0,17,34].forEach(function(dx){g.beginPath();g.moveTo(64,112);g.quadraticCurveTo(64+dx*.5,70,64+dx*1.5,24);g.stroke()});
+    var hl=g.createLinearGradient(0,10,0,60);hl.addColorStop(0,'rgba(255,255,255,.45)');hl.addColorStop(1,'rgba(255,255,255,0)');
+    g.fillStyle=hl;g.fillRect(0,0,128,64);g.restore();
+    path();g.strokeStyle='rgba(255,255,255,.38)';g.lineWidth=2;g.stroke();
+    return c;
+  }
+  SP=[petal('#fff1f4','#f9c6d3','#ec93ae'),petal('#fde8ee','#f4a9be','#dd7392'),petal('#fff6f6','#fbd9df','#f1a3b6'),petal('#f9d4de','#ee9bb3','#d4688a')];
+  function size(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr)}
+  function mk(init){
+    var d=Math.random();
+    return{sp:SP[Math.random()*4|0],w:12+d*20,x0:Math.random()*(W+80)-40,
+      y:init?Math.random()*(H+80)-40:-40-Math.random()*120,vy:20+d*34,amp:14+Math.random()*28,
+      f1:.45+Math.random()*.45,f2:1+Math.random()*.7,ph:Math.random()*6.28,rf:.5+Math.random()*.5,rp:Math.random()*6.28,
+      ff:.7+Math.random()*.8,fp:Math.random()*6.28,a:.35+d*.4,spin:(Math.random()-.5)*.35,rot:Math.random()*6.28};
+  }
+  function init(){size();var n=W<600?14:26;P=[];for(var i=0;i<n;i++)P.push(mk(true))}
+  function frame(ts){
+    var dt=last?Math.min((ts-last)/1000,.05):0;last=ts;T+=dt;
+    cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<P.length;i++){
+      var p=P[i];p.y+=p.vy*dt;p.rot+=p.spin*dt;
+      if(p.y>H+50){P[i]=p=mk(false)}
+      var x=p.x0+p.y*.08+Math.sin(T*p.f1+p.ph)*p.amp+Math.sin(T*p.f2+p.ph*2)*p.amp*.35;
+      var ang=p.rot+Math.sin(T*p.rf+p.rp)*.7;
+      var ax=Math.abs(Math.cos(T*p.ff+p.fp));
+      var edge=Math.min(1,Math.max(0,p.y+40)/90,Math.max(0,H+50-p.y)/90);
+      cx.globalAlpha=p.a*edge*(.55+.45*ax);
+      cx.setTransform(dpr,0,0,dpr,0,0);cx.translate(x,p.y);cx.rotate(ang);cx.scale(.3+.7*ax,1);
+      cx.drawImage(p.sp,-p.w/2,-p.w/2,p.w,p.w);
+    }
+    raf=requestAnimationFrame(frame);
   }
   init();
   if(!reduce){
-    draw();
-    document.addEventListener('visibilitychange',function(){if(document.hidden)cancelAnimationFrame(raf);else draw()});
+    raf=requestAnimationFrame(frame);
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){cancelAnimationFrame(raf)}else{last=0;raf=requestAnimationFrame(frame)}
+    });
   }
-  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,200)});
+  var rt,lw=innerWidth;
+  addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){
+    if(Math.abs(innerWidth-lw)>50){lw=innerWidth;init()}else size();
+  },200)});
 
   /* ===== alur ucapan ===== */
   var CF=window.CONFIG,flow=$('flow'),cur=-1,LAST=5,stages=[];
