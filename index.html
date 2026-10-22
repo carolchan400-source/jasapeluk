@@ -250,6 +250,14 @@ body.inflow #petals{z-index:901}
 .heart-fly{position:fixed;bottom:-30px;z-index:960;pointer-events:none;color:var(--rose);opacity:.9;animation:fly 3.4s ease-in forwards}
 @keyframes fly{to{transform:translate(var(--dx),-112vh) rotate(25deg);opacity:0}}
 @media (max-width:380px){.keypad{grid-template-columns:repeat(3,64px);gap:12px}.key{width:64px;height:64px}}
+
+/* ===== bunga peony (ilustrasi) ===== */
+.peony-img:not([src]){visibility:hidden}
+@keyframes bloom{from{opacity:0;transform:scale(.4) rotate(-24deg)}}
+@keyframes breathe{50%{transform:scale(1.05) rotate(2.5deg)}}
+.gate-peony{width:150px;height:150px;margin:0 auto 14px;animation:bloom 2.2s cubic-bezier(.2,.8,.2,1) both,breathe 6s ease-in-out 2.2s infinite}
+.final-peony{display:block;width:170px;height:170px;margin:0 auto 14px}
+.final.show .final-peony{animation:bloom 1.8s cubic-bezier(.2,.8,.2,1) both,breathe 6s ease-in-out 1.8s infinite}
 </style>
 </head>
 <body class="locked">
@@ -257,7 +265,7 @@ body.inflow #petals{z-index:901}
 
 <div id="gate" role="dialog" aria-label="Pembuka">
   <div class="gate-box">
-    <div class="gate-heart" aria-hidden="true">♥</div>
+    <img class="peony-img gate-peony" alt="" aria-hidden="true">
     <h1>Untuk <em>Viony</em></h1>
     <p>Sebuah ruang kecil yang dibuat dengan hati. Nyalakan suara agar lebih terasa.</p>
     <button class="btn fill" id="enterSound" type="button">MASUK DENGAN MUSIK</button>
@@ -319,6 +327,7 @@ body.inflow #petals{z-index:901}
       <div class="ask-row"><button class="btn fill" type="button" id="yesBtn">IYA</button><button class="btn" type="button" id="noBtn">NANTI DULU</button></div>
     </div>
     <div class="final" id="finalBox">
+      <img class="peony-img final-peony" alt="" aria-hidden="true">
       <h2 id="finalT"></h2>
       <p class="msg-big" id="finalP"></p>
       <button class="btn fill" type="button" id="openSite">BUKA HALAMAN LENGKAP</button>
@@ -522,6 +531,57 @@ window.CONFIG={
 (function(){
   var $=function(id){return document.getElementById(id)};
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ilustrasi bunga peony: digambar sekali lalu dipakai di beberapa tempat */
+  function buildPeony(N){
+    var SC=N/1400,c=document.createElement('canvas');c.width=c.height=N;
+    var g=c.getContext('2d'),sd=42;
+    function rnd(){sd=sd*16807%2147483647;return sd/2147483647}
+    function pet(L,w,c1,c2,c3){
+      var k=L/106;g.save();g.scale(k*w,k);g.translate(-64,-122);
+      function path(){g.beginPath();g.moveTo(64,122);
+        g.bezierCurveTo(30,108,4,84,6,54);g.bezierCurveTo(7,38,16,26,28,22);
+        g.quadraticCurveTo(34,8,46,16);g.quadraticCurveTo(54,20,64,22);
+        g.quadraticCurveTo(74,20,82,16);g.quadraticCurveTo(94,8,100,22);
+        g.bezierCurveTo(112,26,121,38,122,54);g.bezierCurveTo(124,84,98,108,64,122);g.closePath()}
+      g.shadowColor='rgba(110,25,60,.32)';g.shadowBlur=26*SC;g.shadowOffsetY=6*SC;
+      var gr=g.createRadialGradient(64,118,2,64,64,76);
+      gr.addColorStop(0,c3);gr.addColorStop(.5,c2);gr.addColorStop(1,c1);
+      path();g.fillStyle=gr;g.fill();
+      g.shadowColor='transparent';g.shadowBlur=0;g.shadowOffsetY=0;
+      g.save();path();g.clip();
+      g.strokeStyle='rgba(170,55,95,.09)';g.lineWidth=1.3;
+      for(var i=-6;i<=6;i++){g.beginPath();g.moveTo(64,116);g.quadraticCurveTo(64+i*3,70,64+i*8.5,24);g.stroke()}
+      var hl=g.createLinearGradient(0,10,0,66);hl.addColorStop(0,'rgba(255,255,255,.5)');hl.addColorStop(1,'rgba(255,255,255,0)');
+      g.fillStyle=hl;g.fillRect(0,0,128,66);g.restore();
+      path();g.strokeStyle='rgba(255,255,255,.55)';g.lineWidth=1.6;g.stroke();g.restore();
+    }
+    var rings=[[9,560,.92,'#ffe8ee','#f6bccd','#ea94ae'],[9,480,.9,'#ffe3ea','#f3b0c4','#e4809e'],[8,400,.88,'#ffe6ec','#f3a9bf','#dd7392'],
+      [7,320,.86,'#fddde6','#ef97b2','#d4688a'],[6,245,.84,'#fbd0dd','#e8809f','#c9507a'],[5,170,.8,'#f7bccf','#e06a90','#b83b68']];
+    g.translate(N/2,N/2);g.scale(SC,SC);
+    var sh=g.createRadialGradient(0,40,50,0,40,330);sh.addColorStop(0,'rgba(130,30,70,.28)');sh.addColorStop(1,'rgba(130,30,70,0)');
+    g.fillStyle=sh;g.beginPath();g.arc(0,40,330,0,6.283);g.fill();
+    rings.forEach(function(r,ri){
+      var off=rnd()*6.283;
+      for(var i=0;i<r[0];i++){
+        g.save();g.rotate(off+i*(6.283/r[0])+(rnd()-.5)*.28);g.translate(0,-(8+ri*3));g.rotate((rnd()-.5)*.12);
+        pet(r[1]*(.93+rnd()*.14),r[2]*(.95+rnd()*.12),r[3],r[4],r[5]);g.restore();
+      }
+    });
+    var cg=g.createRadialGradient(0,0,2,0,0,70);cg.addColorStop(0,'rgba(255,225,150,.95)');cg.addColorStop(.5,'rgba(236,150,160,.55)');cg.addColorStop(1,'rgba(200,70,110,0)');
+    g.fillStyle=cg;g.beginPath();g.arc(0,0,70,0,6.283);g.fill();
+    for(var j=0;j<70;j++){
+      var a=rnd()*6.283,l=22+rnd()*46;
+      g.strokeStyle='rgba(222,176,92,.9)';g.lineWidth=1.8;g.beginPath();g.moveTo(Math.cos(a)*6,Math.sin(a)*6);g.lineTo(Math.cos(a)*l,Math.sin(a)*l);g.stroke();
+      g.fillStyle='#f3cf78';g.beginPath();g.arc(Math.cos(a)*l,Math.sin(a)*l,2.6,0,6.283);g.fill();
+    }
+    g.fillStyle='#e9b85c';g.beginPath();g.arc(0,0,9,0,6.283);g.fill();
+    return c;
+  }
+  setTimeout(function(){try{
+    var pUrl=buildPeony(640).toDataURL('image/png');
+    [].forEach.call(document.querySelectorAll('.peony-img'),function(im){im.src=pUrl});
+  }catch(err){}},40);
 
   /* header + menu mobile */
   var header=$('siteHeader'),menuBtn=$('menuBtn'),navLinks=$('navLinks');
