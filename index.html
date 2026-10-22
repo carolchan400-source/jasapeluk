@@ -725,7 +725,7 @@ window.CONFIG={
   $('carNext').addEventListener('click',function(){slide(1)});
 
   /* 5: penutup */
-  var noBtn=$('noBtn'),dodge=0,MAXD=10,nx=0,baseL=0;
+  var noBtn=$('noBtn'),dodge=0,MAXD=5,nx=0,baseL=0;
   function dodgeMove(e){
     if(dodge>=MAXD)return;
     if(e&&e.cancelable&&e.type==='touchstart')e.preventDefault();
